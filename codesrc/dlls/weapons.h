@@ -466,7 +466,7 @@ bool bIsMultiplayer ( void );
 void LoadVModel ( char *szViewModel, CBasePlayer *m_pPlayer );
 #endif
 
-class CGlock : public CBasePlayerWeapon
+class CCamera : public CBasePlayerWeapon
 {
 public:
 	void Spawn( void );
@@ -476,11 +476,16 @@ public:
 
 	void PrimaryAttack( void );
 	void SecondaryAttack( void );
-	void GlockFire( float flSpread, float flCycleTime, BOOL fUseAutoAim );
+	void SnapPic( float flSpread, float flCycleTime, BOOL fUseAutoAim );
 	BOOL Deploy( void );
+	void Flash(void);
+	void ChangeFlash( void );
 	void Reload( void );
 	void WeaponIdle( void );
 
+
+	int m_fInZoom;
+	int withflash = 0;
 	virtual BOOL UseDecrement( void )
 	{ 
 #if defined( CLIENT_WEAPONS )

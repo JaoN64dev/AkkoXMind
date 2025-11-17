@@ -36,7 +36,7 @@ class CCrossbowBolt : public CBaseEntity
 {
 	void Spawn( void );
 	void Precache( void );
-	int  Classify ( void );
+	int  Classify ( void ); 
 	void EXPORT BubbleThink( void );
 	void EXPORT BoltTouch( CBaseEntity *pOther );
 	void EXPORT ExplodeThink( void );
@@ -248,7 +248,7 @@ void CCrossbow::Spawn( )
 	FallInit();// get ready to fall down.
 }
 
-int CCrossbow::AddToPlayer( CBasePlayer *pPlayer )
+int CCrossbow::AddToPlayer( CBasePlayer *pPlayer )	
 {
 	if ( CBasePlayerWeapon::AddToPlayer( pPlayer ) )
 	{
