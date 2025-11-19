@@ -1,9 +1,117 @@
-﻿Build started 8/28/2022 1:16:49 PM.
-     1>Project "D:\Games\Half-Life\trinity\codesrc\dlls\hl.vcxproj" on node 2 (clean target(s)).
-     1>_PrepareForClean:
-         Deleting file ".\debughl\hl.lastbuildstate".
-     1>Done Building Project "D:\Games\Half-Life\trinity\codesrc\dlls\hl.vcxproj" (clean target(s)).
+﻿Build started 19/11/2025 15:34:53.
+     1>Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\hl.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\dlls /I..\engine /I..\common /I..\game_shared /I..\pm_shared /I..\ /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D QUIVER /D VOXEL /D QUAKE2 /D VALVE_DLL /D CLIENT_WEAPONS /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_DEPRECATE /D _VC80_UPGRADE=0x0600 /D _WINDLL /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\debughl/" /Fd".\debughl/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt player.cpp
+         player.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\debughl\hl.dll" /INCREMENTAL /NOLOGO user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\hl.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\debughl/hl.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\hl.lib" /MACHINE:X86 /SAFESEH /DLL .\debughl/aflock.obj
+         .\debughl/agrunt.obj
+         .\debughl/airtank.obj
+         .\debughl/animating.obj
+         .\debughl/animation.obj
+         .\debughl/apache.obj
+         .\debughl/barnacle.obj
+         .\debughl/barney.obj
+         .\debughl/bigmomma.obj
+         .\debughl/bloater.obj
+         .\debughl/bmodels.obj
+         .\debughl/bullsquid.obj
+         .\debughl/buttons.obj
+         .\debughl/cbase.obj
+         .\debughl/client.obj
+         .\debughl/combat.obj
+         .\debughl/controller.obj
+         .\debughl/crossbow.obj
+         .\debughl/crowbar.obj
+         .\debughl/defaultai.obj
+         .\debughl/doors.obj
+         .\debughl/effects.obj
+         .\debughl/egon.obj
+         .\debughl/explode.obj
+         .\debughl/flyingmonster.obj
+         .\debughl/func_break.obj
+         .\debughl/func_tank.obj
+         .\debughl/game.obj
+         .\debughl/gamerules.obj
+         .\debughl/gargantua.obj
+         .\debughl/gauss.obj
+         .\debughl/genericmonster.obj
+         .\debughl/ggrenade.obj
+         .\debughl/globals.obj
+         .\debughl/gman.obj
+         .\debughl/h_ai.obj
+         .\debughl/h_battery.obj
+         .\debughl/h_cine.obj
+         .\debughl/h_cycler.obj
+         .\debughl/h_export.obj
+         .\debughl/handgrenade.obj
+         .\debughl/hassassin.obj
+         .\debughl/headcrab.obj
+         .\debughl/healthkit.obj
+         .\debughl/hgrunt.obj
+         .\debughl/hl_wpn_glock.obj
+         .\debughl/hornet.obj
+         .\debughl/hornetgun.obj
+         .\debughl/houndeye.obj
+         .\debughl/ichthyosaur.obj
+         .\debughl/islave.obj
+         .\debughl/items.obj
+         .\debughl/leech.obj
+         .\debughl/lights.obj
+         .\debughl/maprules.obj
+         .\debughl/monstermaker.obj
+         .\debughl/monsters.obj
+         .\debughl/monsterstate.obj
+         .\debughl/mortar.obj
+         .\debughl/mp5.obj
+         .\debughl/multiplay_gamerules.obj
+         .\debughl/nihilanth.obj
+         .\debughl/nodes.obj
+         .\debughl/osprey.obj
+         .\debughl/pathcorner.obj
+         .\debughl/plane.obj
+         .\debughl/plats.obj
+         .\debughl/player.obj
+         .\debughl/pm_debug.obj
+         .\debughl/pm_math.obj
+         .\debughl/pm_shared.obj
+         .\debughl/python.obj
+         .\debughl/rat.obj
+         .\debughl/roach.obj
+         .\debughl/rpg.obj
+         .\debughl/satchel.obj
+         .\debughl/schedule.obj
+         .\debughl/scientist.obj
+         .\debughl/scripted.obj
+         .\debughl/shotgun.obj
+         .\debughl/singleplay_gamerules.obj
+         .\debughl/skill.obj
+         .\debughl/sound.obj
+         .\debughl/soundent.obj
+         .\debughl/spectator.obj
+         .\debughl/squadmonster.obj
+         .\debughl/squeakgrenade.obj
+         .\debughl/subs.obj
+         .\debughl/talkmonster.obj
+         .\debughl/teamplay_gamerules.obj
+         .\debughl/tempmonster.obj
+         .\debughl/tentacle.obj
+         .\debughl/triggers.obj
+         .\debughl/tripmine.obj
+         .\debughl/turret.obj
+         .\debughl/util.obj
+         .\debughl/voice_gamemgr.obj
+         .\debughl/weapons.obj
+         .\debughl/world.obj
+         .\debughl/xen.obj
+         .\debughl/zombie.obj
+         hl.vcxproj -> C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\.\debughl\hl.dll
+       PostBuildEvent:
+         copy /Y ".\debughl\hl.dll" "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\..\dlls\hl.dll"
+         :VCEnd
+                 1 arquivo(s) copiado(s).
+     1>Done Building Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\hl.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.02
+Time Elapsed 00:00:01.40

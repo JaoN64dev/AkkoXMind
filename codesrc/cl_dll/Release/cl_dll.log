@@ -1,9 +1,368 @@
-﻿Build started 8/28/2022 1:16:40 PM.
-     1>Project "D:\Games\Half-Life\trinity\codesrc\cl_dll\cl_dll.vcxproj" on node 2 (clean target(s)).
-     1>_PrepareForClean:
-         Deleting file ".\Release\cl_dll.lastbuildstate".
-     1>Done Building Project "D:\Games\Half-Life\trinity\codesrc\cl_dll\cl_dll.vcxproj" (clean target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.01
+﻿  ammo.cpp
+  cdll_int.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'cdll_int.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'cdll_int.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'cdll_int.cpp')
+  
+  com_weapons.cpp
+  entity.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'entity.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'entity.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'entity.cpp')
+  
+  ev_common.cpp
+  GameStudioModelRenderer.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'GameStudioModelRenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'GameStudioModelRenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'GameStudioModelRenderer.cpp')
+  
+  geiger.cpp
+  hud.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'hud.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'hud.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'hud.cpp')
+  
+  hud_msg.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'hud_msg.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'hud_msg.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'hud_msg.cpp')
+  
+  hud_redraw.cpp
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\hud_redraw.cpp(129,2): error C3861: 'UpdateAndRenderClothEffect': identificador não encontrado
+  hud_servers.cpp
+  in_camera.cpp
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\in_camera.cpp(98,7): error C2668: 'abs': chamada ambígua a função sobrecarregada
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(368,22):
+      poderia ser '__int64 abs(const __int64) throw()'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(363,17):
+      ou       'long abs(const long) throw()'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(293,34):
+      ou       'int abs(int)'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\in_camera.cpp(98,7):
+      ao tentar corresponder a lista de argumentos '(float)'
+  
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\in_camera.cpp(380,7): error C2668: 'abs': chamada ambígua a função sobrecarregada
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(368,22):
+      poderia ser '__int64 abs(const __int64) throw()'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(363,17):
+      ou       'long abs(const long) throw()'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(293,34):
+      ou       'int abs(int)'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\in_camera.cpp(380,7):
+      ao tentar corresponder a lista de argumentos '(float)'
+  
+  input.cpp
+  inputw32.cpp
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\inputw32.cpp(765,25): error C2668: 'abs': chamada ambígua a função sobrecarregada
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(368,22):
+      poderia ser '__int64 abs(const __int64) throw()'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(363,17):
+      ou       'long abs(const long) throw()'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\STDLIB.H(293,34):
+      ou       'int abs(int)'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\inputw32.cpp(765,25):
+      ao tentar corresponder a lista de argumentos '(float)'
+  
+  menu.cpp
+  tri.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'tri.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'tri.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'tri.cpp')
+  
+  util.cpp
+  view.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'view.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'view.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'view.cpp')
+  
+  ev_hldm.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'ev_hldm.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'ev_hldm.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'ev_hldm.cpp')
+  
+  hl_weapons.cpp
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\util.h(254,14): warning C4091: 'typedef ': ignorado à esquerda de '<unnamed-enum-point_hull>' quando nenhuma variável é declarada
+  (compilando o arquivo fonte 'hl/hl_weapons.cpp')
+  
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\hl\hl_weapons.cpp(55,1): error C4430: faltando especificador de tipo - int assumido. Observação: C++ não suporta default-int
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\hl\hl_weapons.cpp(55,8): error C2146: erro de sintaxe: ';' ausente antes do identificador 'g_Glock'
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\hl\hl_weapons.cpp(624,19): error C2065: 'g_Glock': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\hl\hl_weapons.cpp(708,15): error C2065: 'g_Glock': identificador não declarado
+  Compilando...
+  hl_wpn_glock.cpp
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\util.h(254,14): warning C4091: 'typedef ': ignorado à esquerda de '<unnamed-enum-point_hull>' quando nenhuma variável é declarada
+  (compilando o arquivo fonte '../dlls/wpn_shared/hl_wpn_glock.cpp')
+  
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(37,1): error C2065: 'CGlock': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(37,1): error C2059: erro de sintaxe: ')'
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(38,1): error C2065: 'CGlock': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(38,1): error C2059: erro de sintaxe: ')'
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(41,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(43,2): error C2065: 'pev': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(44,2): error C3861: 'Precache': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(45,2): error C2065: 'm_iId': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(46,16): error C2065: 'pev': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(48,2): error C2065: 'm_iDefaultAmmo': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(50,2): error C3861: 'FallInit': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(54,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(60,2): error C2065: 'm_iShell': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(69,2): error C2065: 'm_usFireGlock1': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(70,2): error C2065: 'm_usFireGlock2': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(73,5): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(75,15): error C2065: 'pev': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(84,11): error C2065: 'm_iId': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(90,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(93,9): error C3861: 'DefaultDeploy': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(96,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(98,2): error C3861: 'GlockFire': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(101,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(103,2): error C3861: 'GlockFire': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(106,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(108,6): error C2065: 'm_iClip': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(110,7): error C2065: 'm_fFireOnEmpty': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(112,4): error C3861: 'PlayEmptySound': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(113,4): error C2065: 'm_flNextPrimaryAttack': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(119,2): error C2065: 'm_iClip': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(121,2): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(121,34): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(132,2): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(135,6): error C2065: 'pev': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(137,3): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(138,3): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(143,3): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(144,3): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(147,19): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(152,15): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(160,11): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(160,134): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(160,150): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(162,30): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(162,64): error C2065: 'm_usFireGlock1': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(162,81): error C2065: 'm_usFireGlock2': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(162,172): error C2065: 'm_iClip': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(162,2): error C2198: 'void (__cdecl *)(int,const edict_t *,unsigned short,float,float *,float *,float,float,int,int,int,int)': poucos argumentos para chamada
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(164,2): error C2065: 'm_flNextPrimaryAttack': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(164,26): error C2065: 'm_flNextSecondaryAttack': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(166,7): error C2065: 'm_iClip': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(166,18): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(166,38): error C2065: 'm_iPrimaryAmmoType': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(168,3): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(170,2): error C2065: 'm_flTimeWeaponIdle': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(170,71): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(174,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(176,7): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(181,6): error C2065: 'm_iClip': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(182,13): error C3861: 'DefaultReload': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(184,13): error C3861: 'DefaultReload': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(188,3): error C2065: 'm_flTimeWeaponIdle': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(188,72): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(194,6): error C2653: 'CGlock': não é um nome de classe ou de namespace
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(196,2): error C3861: 'ResetEmptySound': identificador não encontrado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(198,2): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(200,7): error C2065: 'm_flTimeWeaponIdle': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(204,6): error C2065: 'm_iClip': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(207,42): error C2065: 'm_pPlayer': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(212,4): error C2065: 'm_flTimeWeaponIdle': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(217,4): error C2065: 'm_flTimeWeaponIdle': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(222,4): error C2065: 'm_flTimeWeaponIdle': identificador não declarado
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\wpn_shared\hl_wpn_glock.cpp(224,3): error C3861: 'SendWeaponAnim': identificador não encontrado
+  bsprenderer.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(116,40): error C2062: tipo 'float' inesperado
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(116,40): error C2059: erro de sintaxe: 'constante'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(116,40): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(116,89): error C2143: erro de sintaxe: ';' ausente antes de '{'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(116,89): error C2447: '{': faltando cabeçalho de função (lista formal de estilo antigo?)
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(372,46): error C2062: tipo 'long double' inesperado
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(372,46): error C2059: erro de sintaxe: 'constante'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(372,46): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(372,101): error C2143: erro de sintaxe: ';' ausente antes de '{'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(372,101): error C2447: '{': faltando cabeçalho de função (lista formal de estilo antigo?)
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2146: erro de sintaxe: ')' ausente antes do identificador '_Left'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2365: '_Ty': redefinição; definição anterior era 'parâmetro de template'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1):
+      consulte a declaração de '_Ty'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2061: erro de sintaxe: identificador '_Left'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2988: declaração/definição de template irreconhecível
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2059: erro de sintaxe: 'constante'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2143: erro de sintaxe: ';' ausente antes de '{'
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath(862,1): error C2447: '{': faltando cabeçalho de função (lista formal de estilo antigo?)
+  (compilando o arquivo fonte 'bsprenderer.cpp')
+  
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(2251,37): error C2664: 'bool FrustumCheck::CullBox(float [],float [])': não é possível converter um argumento 1 de 'const Vector' em 'float []'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(2251,45):
+      Nenhum operador de conversão definida pelo usuário disponível que possa realizar esta conversão, ou o operador não pode ser chamado
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\frustum.h(48,7):
+      consulte a declaração de 'FrustumCheck::CullBox'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(2251,37):
+      ao tentar corresponder a lista de argumentos '(const Vector, const Vector)'
+  
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(4872,58): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(4873,58): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(4874,58): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(5400,35): error C2664: 'bool FrustumCheck::CullBox(float [],float [])': não é possível converter um argumento 1 de 'const Vector' em 'float []'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(5400,43):
+      Nenhum operador de conversão definida pelo usuário disponível que possa realizar esta conversão, ou o operador não pode ser chamado
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\frustum.h(48,7):
+      consulte a declaração de 'FrustumCheck::CullBox'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\bsprenderer.cpp(5400,35):
+      ao tentar corresponder a lista de argumentos '(const Vector, const Vector)'
+  
+  frustum.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'frustum.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'frustum.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'frustum.cpp')
+  
+  mirrormanager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'mirrormanager.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'mirrormanager.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'mirrormanager.cpp')
+  
+  particle_engine.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'particle_engine.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'particle_engine.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'particle_engine.cpp')
+  
+  propmanager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'propmanager.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'propmanager.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'propmanager.cpp')
+  
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\propmanager.cpp(572,20): warning C4477: 'sscanf': a cadeia de formato '%d' requer um argumento do tipo 'int *', mas um argumento variadic 1 tem o tipo 'short *'
+      C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\propmanager.cpp(572,20):
+      considere usar '%hd' na cadeia de formato
+  
+C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\propmanager.cpp(578,20): warning C4477: 'sscanf': a cadeia de formato '%d' requer um argumento do tipo 'int *', mas um argumento variadic 1 tem o tipo 'float *'
+  rendererdefs.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'rendererdefs.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'rendererdefs.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'rendererdefs.cpp')
+  
+  StudioModelRenderer.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'StudioModelRenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'StudioModelRenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'StudioModelRenderer.cpp')
+  
+  watershader.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2589: '(': token inválido no lado direito de '::'
+  (compilando o arquivo fonte 'watershader.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,12): error C2062: tipo '<error type>' inesperado
+  (compilando o arquivo fonte 'watershader.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cstdlib(24,18): error C2059: erro de sintaxe: ')'
+  (compilando o arquivo fonte 'watershader.cpp')
+  

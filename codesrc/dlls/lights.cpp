@@ -34,6 +34,7 @@ public:
 	void EXPORT	LightStyleThink( void );
 	void	Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 
+
 	virtual int		Save( CSave &save );
 	virtual int		Restore( CRestore &restore );
 	
@@ -101,6 +102,19 @@ void CLight :: KeyValue( KeyValueData* pkvd)
 	{
 		m_iszPattern = ALLOC_STRING( pkvd->szValue );
 		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "_light"))
+	{
+		int r, g, b, v, j;
+		v = 0;
+
+		j = sscanf(pkvd->szValue, "%d %d %d %d\n", &r, &g, &b, &v);
+		if (j == 1)
+			g = b = r;
+
+		if (!v)
+			v = 64;
+
 	}
 	else
 	{

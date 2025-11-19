@@ -1,18 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\",
+  "WorkspaceRootPath": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\dlls\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|solutionrelative:dlls\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\hud.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|solutionrelative:cl_dll\\hud.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\cl_dll\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\wpn_shared\\hl_wpn_glock.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|solutionrelative:dlls\\wpn_shared\\hl_wpn_glock.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\cbase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|solutionrelative:dlls\\cbase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\weapons.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|solutionrelative:dlls\\weapons.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|solutionrelative:cl_dll\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\dlls\\weapons.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|solutionrelative:dlls\\weapons.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6366ED8E-57FB-4037-BD4D-72765FE18D63}|dlls\\hl.vcxproj|solutionrelative:dlls\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\hud_redraw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{04D4239A-A9B9-48AA-AF65-F558F8AE2B88}|cl_dll\\cl_dll.vcxproj|solutionrelative:cl_dll\\hud_redraw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "camera.cpp",
-              "DocumentMoniker": "C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\dlls\\camera.cpp",
+              "DocumentMoniker": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\camera.cpp",
               "RelativeDocumentMoniker": "dlls\\camera.cpp",
-              "ToolTip": "C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\dlls\\camera.cpp",
+              "ToolTip": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\camera.cpp",
               "RelativeToolTip": "dlls\\camera.cpp",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAwEEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-16T22:30:12.89Z",
               "IsPinned": true,
@@ -40,11 +56,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "hl_wpn_glock.cpp",
+              "DocumentMoniker": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\wpn_shared\\hl_wpn_glock.cpp",
+              "RelativeDocumentMoniker": "dlls\\wpn_shared\\hl_wpn_glock.cpp",
+              "ToolTip": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\wpn_shared\\hl_wpn_glock.cpp",
+              "RelativeToolTip": "dlls\\wpn_shared\\hl_wpn_glock.cpp",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAwwJMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-17T18:22:13.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "hud_redraw.cpp",
+              "DocumentMoniker": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\hud_redraw.cpp",
+              "RelativeDocumentMoniker": "cl_dll\\hud_redraw.cpp",
+              "ToolTip": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\hud_redraw.cpp",
+              "RelativeToolTip": "cl_dll\\hud_redraw.cpp",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAH4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-17T18:10:32.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "hud.cpp",
+              "DocumentMoniker": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\hud.cpp",
+              "RelativeDocumentMoniker": "cl_dll\\hud.cpp",
+              "ToolTip": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\hud.cpp",
+              "RelativeToolTip": "cl_dll\\hud.cpp",
+              "ViewState": "AgIAAF0BAAAAAAAAAAAAAHIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-17T18:10:24.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "cbase.h",
+              "DocumentMoniker": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\cbase.h",
+              "RelativeDocumentMoniker": "dlls\\cbase.h",
+              "ToolTip": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\cbase.h",
+              "RelativeToolTip": "dlls\\cbase.h",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAqwM4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-17T06:11:33.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "weapons.h",
-              "DocumentMoniker": "C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\dlls\\weapons.h",
+              "DocumentMoniker": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\weapons.h",
               "RelativeDocumentMoniker": "dlls\\weapons.h",
-              "ToolTip": "C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\dlls\\weapons.h",
+              "ToolTip": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\dlls\\weapons.h",
               "RelativeToolTip": "dlls\\weapons.h",
               "ViewState": "AgIAAM8BAAAAAAAAAAAjwNQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -53,20 +125,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "camera.cpp",
-              "DocumentMoniker": "C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\cl_dll\\camera.cpp",
+              "DocumentMoniker": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\camera.cpp",
               "RelativeDocumentMoniker": "cl_dll\\camera.cpp",
-              "ToolTip": "C:\\Users\\joaoe\\OneDrive\\Desktop\\AkkoXMind\\codesrc\\cl_dll\\camera.cpp",
+              "ToolTip": "C:\\Users\\pc gamer\\Desktop\\Complex\\AkkoXMind\\codesrc\\cl_dll\\camera.cpp",
               "RelativeToolTip": "cl_dll\\camera.cpp",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAjwGEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-17T01:40:40.661Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }

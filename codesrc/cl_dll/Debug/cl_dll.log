@@ -1,9 +1,13 @@
-﻿Build started 8/28/2022 1:16:49 PM.
-     1>Project "D:\Games\Half-Life\trinity\codesrc\cl_dll\cl_dll.vcxproj" on node 2 (clean target(s)).
-     1>_PrepareForClean:
-         Deleting file ".\Debug\cl_dll.lastbuildstate".
-     1>Done Building Project "D:\Games\Half-Life\trinity\codesrc\cl_dll\cl_dll.vcxproj" (clean target(s)).
+﻿Build started 19/11/2025 15:34:53.
+     1>Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\cl_dll.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         cl_dll.vcxproj -> C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\.\Debug\client.dll
+       PostBuildEvent:
+         copy /Y ".\Debug\client.dll" "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\..\dlls\client.dll"
+         :VCEnd
+                 1 arquivo(s) copiado(s).
+     1>Done Building Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\cl_dll.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:00.19

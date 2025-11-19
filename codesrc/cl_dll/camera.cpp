@@ -1,245 +1,172 @@
-/***
-*
-*	Copyright (c) 1996-2002, Valve LLC. All rights reserved.
-*
-*	This product contains software technology licensed from Id
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+// camera.cpp - simple camera weapon (server-side)
 
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
-#include "nodes.h"
 #include "player.h"
-#include "dlight.h"
-#include "hud.h"
+#include "weapons.h"
 
+#include "cameraweapon.h"
+
+// message id (registered during Precache)
+int gmsgScreenFade = 0;
+
+// animation enum (kept minimal)
 enum camera_e {
 	CAMERA_IDLE1 = 0,
 	CAMERA_IDLE2,
 	CAMERA_IDLE3,
-	CAMERA_SHOOT,
-	CAMERA_SHOOT_EMPTY,
-	CAMERA_RELOAD,
-	CAMERA_RELOAD_NOT_EMPTY,
+	CAMERA_SNAP,
 	CAMERA_DRAW,
-	CAMERA_HOLSTER,
-	CAMERA_ADD_SILENCER
+	CAMERA_HOLSTER
 };
 
-LINK_ENTITY_TO_CLASS(weapon_glock, CCamera);
+LINK_ENTITY_TO_CLASS(weapon_camera, CCamera);
 
-
-void CCamera::Spawn()
+// ----------------------------- Spawn -----------------------------
+void CCamera::Spawn(void)
 {
-	pev->classname = MAKE_STRING("weapon_9mmhandgun"); // hack to allow for old names
 	Precache();
-	m_iId = WEAPON_GLOCK;
-	SET_MODEL(ENT(pev), "models/w_9mmhandgun.mdl");
 
-	m_iDefaultAmmo = GLOCK_DEFAULT_GIVE;
+	// Give a weapon id — use WEAPON_NONE if you prefer a custom system.
+	m_iId = WEAPON_NONE;
 
-	FallInit();// get ready to fall down.
+	SET_MODEL(ENT(pev), "models/w_camera.mdl");
+
+	m_fFlashOn = 0; // flash off by default
+
+	FallInit(); // allow to fall to the ground
 }
 
-
+// ----------------------------- Precache ---------------------------
 void CCamera::Precache(void)
 {
-	PRECACHE_MODEL("models/v_9mmhandgun.mdl");
-	PRECACHE_MODEL("models/w_9mmhandgun.mdl");
-	PRECACHE_MODEL("models/p_9mmhandgun.mdl");
+	PRECACHE_MODEL("models/v_camera.mdl");
+	PRECACHE_MODEL("models/w_camera.mdl");
+	PRECACHE_MODEL("models/p_camera.mdl");
 
-	m_iShell = PRECACHE_MODEL("models/shell.mdl");// brass shell
+	PRECACHE_SOUND("camera/click.wav");
+	PRECACHE_SOUND("camera/flash.wav");
 
-	PRECACHE_SOUND("items/9mmclip1.wav");
-	PRECACHE_SOUND("items/9mmclip2.wav");
-
-	PRECACHE_SOUND("weapons/pl_gun1.wav");//silenced handgun
-	PRECACHE_SOUND("weapons/pl_gun2.wav");//silenced handgun
-	PRECACHE_SOUND("weapons/pl_gun3.wav");//handgun
-
-	m_usFireGlock1 = PRECACHE_EVENT(1, "events/glock1.sc");
-	m_usFireGlock2 = PRECACHE_EVENT(1, "events/glock2.sc");
+	// Register the built-in "ScreenFade" user message so we can trigger an instant white flash clientside.
+	// If your client HUD registers ScreenFade differently, adjust accordingly.
+	gmsgScreenFade = REG_USER_MSG("ScreenFade", -1);
 }
 
+// ----------------------------- ItemInfo --------------------------
 int CCamera::GetItemInfo(ItemInfo* p)
 {
-	p->pszName = STRING(pev->classname);
-	p->pszAmmo1 = "9mm";
-	p->iMaxAmmo1 = _9MM_MAX_CARRY;
+	memset(p, 0, sizeof(*p));
+	p->pszName = "weapon_camera";
+	p->pszAmmo1 = NULL;
+	p->iMaxAmmo1 = -1;
 	p->pszAmmo2 = NULL;
 	p->iMaxAmmo2 = -1;
-	p->iMaxClip = GLOCK_MAX_CLIP;
+
+	p->iMaxClip = -1; // no clip
 	p->iSlot = 1;
-	p->iPosition = 0;
+	p->iPosition = 1;
 	p->iFlags = 0;
-	p->iId = m_iId = WEAPON_GLOCK;
-	p->iWeight = GLOCK_WEIGHT;
+	p->iId = m_iId;
+	p->iWeight = 0;
 
 	return 1;
 }
 
-BOOL CCamera::Deploy()
+// ----------------------------- Deploy ----------------------------
+BOOL CCamera::Deploy(void)
 {
-	// pev->body = 1;
-	return DefaultDeploy("models/v_9mmhandgun.mdl", "models/p_9mmhandgun.mdl", CAMERA_DRAW, "onehanded", /*UseDecrement() ? 1 : 0*/ 0);
+	return DefaultDeploy("models/v_camera.mdl", "models/p_camera.mdl", CAMERA_DRAW, "onehanded");
 }
 
-
-void CHud::Init()
+// ----------------------------- Holster ---------------------------
+void CCamera::Holster(int skiplocal)
 {
-	gEngfuncs.pfnAddCommand("+flash", Flash() );
+	SendWeaponAnim(CAMERA_HOLSTER, 1);
 }
 
-
-void CCamera::Flash() {
-	if (withflash == 1) {
-		withflash = 0;
-	}
-	else {
-		withflash = 1;
-	}
-}
-
-
-void CCamera::SecondaryAttack(void)
-{
-
-
-}
-
+// ----------------------------- PrimaryAttack ---------------------
 void CCamera::PrimaryAttack(void)
 {
-	SnapPic(0.01, 0.3, TRUE);
+	CameraSnap(0.8f);
 }
 
-void CCamera::SnapPic(float flSpread, float flCycleTime, BOOL fUseAutoAim)
+// ----------------------------- CameraSnap -----------------------
+void CCamera::CameraSnap(float flCycleTime)
 {
-	if (m_iClip <= 0)
-	{
-		if (m_fFireOnEmpty)
-		{
-			PlayEmptySound();
-			m_flNextPrimaryAttack = UTIL_WeaponTimeBase() + 0.2;
-		}
+	// player attack animation + viewmodel anim
+	if (m_pPlayer)
+		m_pPlayer->SetAnimation(PLAYER_ATTACK1);
 
-		return;
-	}
+	SendWeaponAnim(CAMERA_SNAP, 1);
 
-	m_iClip--;
-
-	m_pPlayer->pev->effects = (int)(m_pPlayer->pev->effects) | EF_MUZZLEFLASH;
-
-	int flags;
-
-#if defined( CLIENT_WEAPONS )
-	flags = FEV_NOTHOST;
-#else
-	flags = 0;
-#endif
-
-	// player "shoot" animation
-	m_pPlayer->SetAnimation(PLAYER_ATTACK1);
-
-	// silenced
-	if (pev->body == 1)
-	{
-		m_pPlayer->m_iWeaponVolume = QUIET_GUN_VOLUME;
-		m_pPlayer->m_iWeaponFlash = DIM_GUN_FLASH;
-	}
+	// play sound for click or flash
+	if (m_fFlashOn)
+		EMIT_SOUND_DYN(edict(), CHAN_WEAPON, "camera/flash.wav", 1.0f, ATTN_NORM, 0, 100);
 	else
+		EMIT_SOUND_DYN(edict(), CHAN_WEAPON, "camera/click.wav", 1.0f, ATTN_NORM, 0, 100);
+
+	// Instant full-white flash (no fade-in): send ScreenFade user message to the client.
+	if (m_fFlashOn)
 	{
-		// non-silenced
-		m_pPlayer->m_iWeaponVolume = NORMAL_GUN_VOLUME;
-		m_pPlayer->m_iWeaponFlash = NORMAL_GUN_FLASH;
+		m_pPlayer->pev->effects |= EF_BRIGHTLIGHT;
+
+		// remove the light shortly after
+		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 0.1f;
 	}
 
-	Vector vecSrc = m_pPlayer->GetGunPosition();
-	Vector vecAiming;
-
-	if (fUseAutoAim)
-	{
-		vecAiming = m_pPlayer->GetAutoaimVector(AUTOAIM_10DEGREES);
-	}
-	else
-	{
-		vecAiming == gpGlobals->v_forward;
-	}
-
-	Vector vecDir;
-	vecDir = m_pPlayer->FireBulletsPlayer(1, vecSrc, vecAiming, Vector(flSpread, flSpread, flSpread), 8192, BULLET_PLAYER_9MM, 0, 0, m_pPlayer->pev, m_pPlayer->random_seed);
-
-	PLAYBACK_EVENT_FULL(flags, m_pPlayer->edict(), fUseAutoAim ? m_usFireGlock1 : m_usFireGlock2, 0.0, (float*)&g_vecZero, (float*)&g_vecZero, vecDir.x, vecDir.y, 0, 0, (m_iClip == 0) ? 1 : 0, 0);
-
-	m_flNextPrimaryAttack = m_flNextSecondaryAttack = UTIL_WeaponTimeBase() + flCycleTime;
-
-	if (!m_iClip && m_pPlayer->m_rgAmmo[m_iPrimaryAmmoType] <= 0)
-		// HEV suit - indicate out of ammo condition
-		m_pPlayer->SetSuitUpdate("!HEV_AMO0", FALSE, 0);
-
-	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
+	m_flNextPrimaryAttack = UTIL_WeaponTimeBase() + flCycleTime;
+	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 3.0f;
 }
 
-
-void CCamera::Reload(void)
+// ----------------------------- SecondaryAttack -------------------
+void CCamera::SecondaryAttack(void)
 {
-	if (m_pPlayer->ammo_9mm <= 0)
-		return;
+	ToggleFlash();
+	m_flNextSecondaryAttack = UTIL_WeaponTimeBase() + 0.3f;
+}
 
-	int iResult;
+// ----------------------------- ToggleFlash ----------------------
+void CCamera::ToggleFlash(void)
+{
+	m_fFlashOn = !m_fFlashOn;
 
-	if (m_iClip == 0)
-		iResult = DefaultReload(17, CAMERA_RELOAD, 1.5);
-	else
-		iResult = DefaultReload(17, CAMERA_RELOAD_NOT_EMPTY, 1.5);
-
-	if (iResult)
+	// Notify only the player who toggled it.
+	if (m_pPlayer)
 	{
-		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
+		ClientPrint(m_pPlayer->pev, HUD_PRINTCENTER, m_fFlashOn ? "Flash: ON" : "Flash: OFF");
 	}
 }
 
-
-
+// ----------------------------- WeaponIdle -----------------------
 void CCamera::WeaponIdle(void)
 {
 	ResetEmptySound();
 
-	m_pPlayer->GetAutoaimVector(AUTOAIM_10DEGREES);
-
 	if (m_flTimeWeaponIdle > UTIL_WeaponTimeBase())
 		return;
 
-	// only idle if the slid isn't back
-	if (m_iClip != 0)
-	{
-		int iAnim;
-		float flRand = UTIL_SharedRandomFloat(m_pPlayer->random_seed, 0.0, 1.0);
+	if (!m_pPlayer)
+		return;
 
-		if (flRand <= 0.3 + 0 * 0.75)
-		{
-			iAnim = CAMERA_IDLE3;
-			m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 49.0 / 16;
-		}
-		else if (flRand <= 0.6 + 0 * 0.875)
-		{
-			iAnim = CAMERA_IDLE1;
-			m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 60.0 / 16.0;
-		}
-		else
-		{
-			iAnim = CAMERA_IDLE2;
-			m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 40.0 / 16.0;
-		}
-		SendWeaponAnim(iAnim, 1);
+	float flRand = UTIL_SharedRandomFloat(m_pPlayer->random_seed, 0.0f, 1.0f);
+	int iAnim;
+
+	if (flRand <= 0.33f)
+	{
+		iAnim = CAMERA_IDLE1;
+		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 60.0 / 16.0;
 	}
+	else if (flRand <= 0.66f)
+	{
+		iAnim = CAMERA_IDLE2;
+		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 40.0 / 16.0;
+	}
+	else
+	{
+		iAnim = CAMERA_IDLE3;
+		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 49.0 / 16.0;
+	}
+
+	SendWeaponAnim(iAnim, 1);
 }

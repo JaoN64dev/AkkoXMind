@@ -466,7 +466,7 @@ bool bIsMultiplayer ( void );
 void LoadVModel ( char *szViewModel, CBasePlayer *m_pPlayer );
 #endif
 
-class CCamera : public CBasePlayerWeapon
+class CGlock : public CBasePlayerWeapon
 {
 public:
 	void Spawn( void );
@@ -476,16 +476,11 @@ public:
 
 	void PrimaryAttack( void );
 	void SecondaryAttack( void );
-	void SnapPic( float flSpread, float flCycleTime, BOOL fUseAutoAim );
+	void GlockFire( float flSpread, float flCycleTime, BOOL fUseAutoAim );
 	BOOL Deploy( void );
-	void Flash(void);
-	void ChangeFlash( void );
 	void Reload( void );
 	void WeaponIdle( void );
 
-
-	int m_fInZoom;
-	int withflash = 0;
 	virtual BOOL UseDecrement( void )
 	{ 
 #if defined( CLIENT_WEAPONS )
@@ -1020,5 +1015,38 @@ private:
 	unsigned short m_usSnarkFire;
 };
 
+
+
+class CCamera : public CBasePlayerWeapon
+{
+public:
+	void Spawn(void);
+	void Precache(void);
+	int iItemSlot(void) { return 2; }
+	int GetItemInfo(ItemInfo *p);
+
+	void PrimaryAttack(void);
+	void SecondaryAttack(void);
+	void SnapPic(float flSpread, float flCycleTime, BOOL fUseAutoAim);
+	BOOL Deploy(void);
+	void Flash(void);
+	void ChangeFlash(void);
+	void Reload(void);
+	void WeaponIdle(void);
+
+
+	int m_fInZoom;
+	int withflash = 0;
+	virtual BOOL UseDecrement(void)
+	{
+#if defined( CLIENT_WEAPONS )
+		return TRUE;
+#else
+		return FALSE;
+#endif
+	}
+
+
+};
 
 #endif // WEAPONS_H

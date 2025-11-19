@@ -3446,11 +3446,6 @@ void CBasePlayer::ImpulseCommands( )
 //=========================================================
 void CBasePlayer::CheatImpulseCommands( int iImpulse )
 {
-#if !defined( HLDEMO_BUILD )
-	if ( g_flWeaponCheat == 0.0 )
-	{
-		return;
-	}
 
 	CBaseEntity *pEntity;
 	TraceResult tr;
@@ -3618,7 +3613,7 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		}
 		break;
 	}
-#endif	// HLDEMO_BUILD
+
 }
 
 //
