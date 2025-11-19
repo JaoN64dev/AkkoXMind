@@ -291,6 +291,9 @@
     <ClCompile Include="watershader.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="environment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="parsemsg.h">
@@ -445,6 +448,9 @@
     </ClInclude>
     <ClInclude Include="watershader.h">
       <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="environment.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

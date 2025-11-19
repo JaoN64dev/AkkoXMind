@@ -432,6 +432,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release - HL25 Build|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="environment.cpp" />
     <ClCompile Include="ev_common.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug - HL25 Build|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -1176,6 +1177,7 @@
     <ClCompile Include="watershader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="environment.h" />
     <ClInclude Include="parsemsg.h" />
     <ClInclude Include="ammo.h" />
     <ClInclude Include="ammohistory.h" />
