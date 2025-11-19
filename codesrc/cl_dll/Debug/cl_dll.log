@@ -1,6 +1,112 @@
-﻿Build started 19/11/2025 17:29:06.
+﻿Build started 19/11/2025 19:08:05.
      1>Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\cl_dll.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\dlls /I..\common /I..\pm_shared /I..\engine /I..\utils\vgui\include /I..\game_shared /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D CLIENT_DLL /D CLIENT_WEAPONS /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_DEPRECATE /D HL25_UPDATE /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /FR".\Debug\\" /Gd /TP /wd4482 /wd4996 /analyze- /errorReport:prompt bsprenderer.cpp cdll_int.cpp hud.cpp hud_msg.cpp mirrormanager.cpp rendererdefs.cpp tri.cpp view.cpp watershader.cpp
+         watershader.cpp
+         Generating Code...
+         Compiling...
+         bsprenderer.cpp
+         Generating Code...
+         Compiling...
+         view.cpp
+         tri.cpp
+         rendererdefs.cpp
+         mirrormanager.cpp
+         hud_msg.cpp
+         hud.cpp
+         cdll_int.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\client.dll" /INCREMENTAL /NOLOGO odbc32.lib odbccp32.lib winmm.lib ../utils/vgui/lib/win32_vc6/vgui.lib wsock32.lib user32.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/client.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug/client.lib" /MACHINE:X86 /SAFESEH /DLL .\Debug/ammo.obj
+         .\Debug/ammo_secondary.obj
+         .\Debug/ammohistory.obj
+         .\Debug/battery.obj
+         .\Debug/cdll_int.obj
+         .\Debug/com_weapons.obj
+         .\Debug/death.obj
+         .\Debug/demo.obj
+         .\Debug/entity.obj
+         .\Debug/environment.obj
+         .\Debug/ev_common.obj
+         .\Debug/events.obj
+         .\Debug/flashlight.obj
+         .\Debug/GameStudioModelRenderer.obj
+         .\Debug/geiger.obj
+         .\Debug/health.obj
+         .\Debug/hud.obj
+         .\Debug/hud_msg.obj
+         .\Debug/hud_redraw.obj
+         .\Debug/hud_servers.obj
+         .\Debug/hud_spectator.obj
+         .\Debug/hud_update.obj
+         .\Debug/in_camera.obj
+         .\Debug/input.obj
+         .\Debug/inputw32.obj
+         .\Debug/menu.obj
+         .\Debug/message.obj
+         .\Debug/parsemsg.obj
+         .\Debug/pm_debug.obj
+         .\Debug/pm_math.obj
+         .\Debug/pm_shared.obj
+         .\Debug/saytext.obj
+         .\Debug/status_icons.obj
+         .\Debug/statusbar.obj
+         .\Debug/studio_util.obj
+         .\Debug/text_message.obj
+         .\Debug/train.obj
+         .\Debug/tri.obj
+         .\Debug/util.obj
+         .\Debug/vgui_checkbutton2.obj
+         .\Debug/vgui_ClassMenu.obj
+         .\Debug/vgui_ConsolePanel.obj
+         .\Debug/vgui_ControlConfigPanel.obj
+         .\Debug/vgui_CustomObjects.obj
+         .\Debug/vgui_grid.obj
+         .\Debug/vgui_helpers.obj
+         .\Debug/vgui_int.obj
+         .\Debug/vgui_listbox.obj
+         .\Debug/vgui_loadtga.obj
+         .\Debug/vgui_MOTDWindow.obj
+         .\Debug/vgui_SchemeManager.obj
+         .\Debug/vgui_ScorePanel.obj
+         .\Debug/vgui_ServerBrowser.obj
+         .\Debug/vgui_SpectatorPanel.obj
+         .\Debug/vgui_TeamFortressViewport.obj
+         .\Debug/vgui_teammenu.obj
+         .\Debug/view.obj
+         .\Debug/crossbow.obj
+         .\Debug/crowbar.obj
+         .\Debug/egon.obj
+         .\Debug/ev_hldm.obj
+         .\Debug/gauss.obj
+         .\Debug/handgrenade.obj
+         .\Debug/hl_baseentity.obj
+         .\Debug/hl_events.obj
+         .\Debug/hl_objects.obj
+         .\Debug/hl_weapons.obj
+         .\Debug/hl_wpn_glock.obj
+         .\Debug/hornetgun.obj
+         .\Debug/interface.obj
+         .\Debug/mp5.obj
+         .\Debug/python.obj
+         .\Debug/rpg.obj
+         .\Debug/satchel.obj
+         .\Debug/shotgun.obj
+         .\Debug/squeakgrenade.obj
+         .\Debug/tripmine.obj
+         .\Debug/vgui_scrollbar2.obj
+         .\Debug/vgui_slider2.obj
+         .\Debug/voice_banmgr.obj
+         .\Debug/voice_status.obj
+         .\Debug/bsprenderer.obj
+         .\Debug/frustum.obj
+         .\Debug/mirrormanager.obj
+         .\Debug/particle_engine.obj
+         .\Debug/propmanager.obj
+         .\Debug/rendererdefs.obj
+         .\Debug/StudioModelRenderer.obj
+         .\Debug/textureloader.obj
+         .\Debug/watershader.obj
          cl_dll.vcxproj -> C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\cl_dll\.\Debug\client.dll
        PostBuildEvent:
          copy /Y ".\Debug\client.dll" "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\..\dlls\client.dll"
@@ -10,4 +116,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.21
+Time Elapsed 00:00:08.47

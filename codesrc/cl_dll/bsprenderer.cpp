@@ -573,8 +573,8 @@ void CBSPRenderer::GetRenderEnts( void )
 	int iMsg = pPlayer->curstate.messagenum;
 
 	// Clear water shader class
-	for(int i = 0; i < gWaterShader.m_iNumWaterEntities; i++)
-		gWaterShader.m_pWaterEntities[i].draw = false;
+	//for(int i = 0; i < gWaterShader.m_iNumWaterEntities; i++)
+		//		gWaterShader.m_pWaterEntities[i].draw = false;
 
 	// Clear mirror class
 	for(int i = 0; i < gMirrorManager.m_iNumMirrors; i++)
@@ -610,7 +610,7 @@ void CBSPRenderer::GetRenderEnts( void )
 			continue;
 		}
 
-		if((pEntity->curstate.effects & FL_WATERSHADER) && m_bShaderSupport && gWaterShader.m_pCvarWaterShader->value > 0)
+	/*	if((pEntity->curstate.effects & FL_WATERSHADER) && m_bShaderSupport && gWaterShader.m_pCvarWaterShader->value > 0)
 		{
 			if(!pEntity->efrag)
 				gWaterShader.AddEntity(pEntity);
@@ -619,7 +619,7 @@ void CBSPRenderer::GetRenderEnts( void )
 				((cl_water_t *)pEntity->efrag)->draw = true;
 
 			continue;
-		}
+		}*/  //removed
 
 		if ( pEntity->curstate.effects & FL_ELIGHT )
 		{
@@ -998,7 +998,7 @@ void CBSPRenderer::SetupRenderer ( void )
 
 	g_StudioRenderer.StudioSwapEngineCache();
 	CheckTextures(); // Do it for world seperately
-	gWaterShader.LoadScript();
+	//gWaterShader.LoadScript();
 
 	LoadDecals();
 	CreateTextures();

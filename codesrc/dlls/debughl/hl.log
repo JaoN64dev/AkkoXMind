@@ -1,4 +1,4 @@
-﻿Build started 19/11/2025 17:29:06.
+﻿Build started 19/11/2025 18:12:21.
      1>Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\hl.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\dlls /I..\engine /I..\common /I..\game_shared /I..\pm_shared /I..\ /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D QUIVER /D VOXEL /D QUAKE2 /D VALVE_DLL /D CLIENT_WEAPONS /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_DEPRECATE /D _VC80_UPGRADE=0x0600 /D _WINDLL /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\debughl/" /Fd".\debughl/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt effects.cpp
@@ -105,8 +105,6 @@
          .\debughl/world.obj
          .\debughl/xen.obj
          .\debughl/zombie.obj
-     1>aflock.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-            Creating library .\Debug\hl.lib and object .\Debug\hl.exp
          hl.vcxproj -> C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\.\debughl\hl.dll
        PostBuildEvent:
          copy /Y ".\debughl\hl.dll" "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\..\dlls\hl.dll"
@@ -116,4 +114,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.07
+Time Elapsed 00:00:01.32

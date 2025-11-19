@@ -60,7 +60,7 @@ TeamFortressViewport *gViewPort = NULL;
 //RENDERERS START
 CBSPRenderer gBSPRenderer;
 CParticleEngine gParticleEngine;
-CWaterShader gWaterShader;
+//CWaterShader gWaterShader;
 
 CTextureLoader gTextureLoader;
 CPropManager gPropManager;

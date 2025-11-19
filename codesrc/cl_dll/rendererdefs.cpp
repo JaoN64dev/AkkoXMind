@@ -791,7 +791,7 @@ void R_CalcRefDef( ref_params_t *pparams )
 	gBSPRenderer.DrawShadowPasses();
 
 	// Render water shader perspectives
-	gWaterShader.DrawWaterPasses(pparams);
+	//gWaterShader.DrawWaterPasses(pparams); removed!
 
 	// Render mirror perspectives
 	gMirrorManager.DrawMirrorPasses(pparams);
@@ -827,7 +827,7 @@ void R_DrawNormalTriangles( void )
 	gPropManager.DrawCables();
 
 	// Render water shader
-	gWaterShader.DrawWater();
+	//gWaterShader.DrawWater(); removed
 
 	//Draw mirrors
 	gMirrorManager.DrawMirrors();
@@ -859,7 +859,7 @@ void R_DrawTransparentTriangles( void )
 		glFogi(GL_FOG_DISTANCE_MODE_NV, GL_EYE_PLANE_ABSOLUTE_NV);
 
 	// Restore fog params
-	gWaterShader.Restore();
+	//gWaterShader.Restore(); removed
 
 	// Disable VBO here
 	gBSPRenderer.glBindBufferARB(GL_ARRAY_BUFFER_ARB, NULL);
@@ -1393,7 +1393,7 @@ void R_Init( void )
 	gTextureLoader.Init();
 	gBSPRenderer.Init();
 	gParticleEngine.Init();
-	gWaterShader.Init();
+	//gWaterShader.Init(); removed
 	gMirrorManager.Init();
 
 	glPopAttrib();
@@ -1410,7 +1410,7 @@ void R_VidInit( void )
 	glPushAttrib(GL_TEXTURE_BIT);
 
 	gTextureLoader.VidInit();
-	gWaterShader.VidInit();
+	//gWaterShader.VidInit(); removed
 	gBSPRenderer.VidInit();
 	gParticleEngine.VidInit();
 	gMirrorManager.VidInit();
@@ -1433,7 +1433,7 @@ void R_Shutdown( void )
 	gTextureLoader.Shutdown();
 	gBSPRenderer.Shutdown();
 	gPropManager.Shutdown();
-	gWaterShader.Shutdown();
+	//removed gWaterShader.Shutdown();
 	gParticleEngine.Shutdown();
 
 	glPopAttrib();

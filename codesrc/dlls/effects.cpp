@@ -3190,7 +3190,8 @@ void CEnvRain::Think()
 			vecSrc.z = pev->maxs.z;
 		else
 			vecSrc.z = pev->mins.z + RANDOM_LONG(0, pev->size.z);
-		vecDest = vecSrc - vecOffs;
+		vecDest = vecSrc;
+		vecDest.z = pev->mins.z;
 		bDraw = TRUE;
 
 		switch (m_iExtent)
