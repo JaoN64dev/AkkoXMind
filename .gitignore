@@ -61,3 +61,37 @@ ipch/
 
 /codesrc/.vs/trinity/CopilotIndices
 /codesrc/.vs/trinity/CopilotIndices
+
+# Visual Studio generated files
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+*.tlog
+*.lastbuildstate
+*.obj
+*.ipch
+*.pdb
+*.pch
+*.idb
+*.res
+
+# Browse database
+*.Browse.VC.db
+
+# Build outputs
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+
+# Intermediate C++ build files
+*.sbr
+*.bsc
+*.asm
+*.sbr
+*.log
