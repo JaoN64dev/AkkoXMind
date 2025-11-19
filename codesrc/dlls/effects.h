@@ -250,5 +250,40 @@ public:
 	BOOL m_fDisableShadows;
 	BOOL m_fDisableDrawing;
 };
+//SPIRIT
+class CRainSettings : public CBaseEntity
+{
+public:
+	void	Spawn() override;
+	void	KeyValue(KeyValueData *pkvd) override;
+
+	int	ObjectCaps() override { return (CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION); }
+
+	int		Save(CSave &save) override;
+	int		Restore(CRestore &restore) override;
+	static	TYPEDESCRIPTION m_SaveData[];
+
+	float Rain_Distance;
+	int Rain_Mode;
+};
+
+class CRainModify : public CBaseEntity
+{
+public:
+	void	Spawn() override;
+	void	KeyValue(KeyValueData *pkvd) override;
+	void	Use(CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value) override;
+
+	int	ObjectCaps() override { return (CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION); }
+
+	int		Save(CSave &save) override;
+	int		Restore(CRestore &restore) override;
+	static	TYPEDESCRIPTION m_SaveData[];
+
+	int Rain_Drips;
+	float Rain_windX, Rain_windY;
+	float Rain_randX, Rain_randY;
+	float fadeTime;
+};
 //RENDERERS END
 #endif		//EFFECTS_H
