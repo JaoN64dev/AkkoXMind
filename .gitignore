@@ -39,3 +39,25 @@
 
 # debug information files
 *.dwo
+
+*.ipch
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.db
+*.cache
+*.obj
+*.pdb
+*.ilk
+*.log
+*.tlog
+*.idb
+*.aps
+*.ncb
+*.opendb
+*.VC.db
+ipch/
+
+/codesrc/.vs/trinity/CopilotIndices
+/codesrc/.vs/trinity/CopilotIndices
