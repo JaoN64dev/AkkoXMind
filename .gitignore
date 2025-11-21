@@ -95,3 +95,8 @@ ipch/
 *.asm
 *.sbr
 *.log
+*.sbr
+*.sbr
+*.sbr
+*.sdf
+*.suo
