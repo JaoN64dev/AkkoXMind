@@ -160,7 +160,7 @@ int CHud :: Redraw( float flTime, int intermission )
 		if (m_hsprLogo == 0)
 			m_hsprLogo = LoadSprite("sprites/%d_logo.spr");
 
-		SPR_Set(m_hsprLogo, 250, 250, 250 );
+		SPR_Set(m_hsprLogo, 25, 250, 250 );
 		
 		x = SPR_Width(m_hsprLogo, 0);
 		x = ScreenWidth - x;
@@ -171,6 +171,32 @@ int CHud :: Redraw( float flTime, int intermission )
 		i = grgLogoFrame[iFrame] - 1;
 
 		SPR_DrawAdditive(i, x, y, NULL);
+	}
+
+
+	//could do it in other places? yeah. but since hl1 does their demo logo shit here...btw, I'm gonna reactivate that shit :D
+	if (camtest->value != 0)
+	{
+
+		if (m_hsprCamera == 0)
+			m_hsprCamera = LoadSprite("sprites/cmplxhud01.spr"); //Just a test rn
+
+
+		SPR_Set(m_hsprCamera, 255, 255, 255); //perhaps we change this later so it behaves dynamically.
+
+		const int width = SPR_Width(m_hsprCamera, 0);
+		const int height = SPR_Height(m_hsprCamera, 0);
+		const int padding = 8;
+
+		int bottomleft = 0;
+		SPR_DrawAdditive(bottomleft, padding, ScreenHeight - height - padding, NULL);
+		int topleft = 1;
+		SPR_DrawAdditive(topleft, padding, padding, NULL);
+		int topright = 2;
+		SPR_DrawAdditive(topright, ScreenWidth - width - padding, padding, NULL);
+		int bottomright = 3;
+		SPR_DrawAdditive(bottomright, ScreenWidth - width - padding, ScreenHeight - height - padding, NULL);
+	
 	}
 
 	/*
@@ -197,6 +223,8 @@ int CHud :: Redraw( float flTime, int intermission )
 
 	return 1;
 }
+
+
 
 void ScaleColors( int &r, int &g, int &b, int a )
 {
