@@ -272,6 +272,7 @@ BOOL CBasePlayer::HasWeapons( void ) { return FALSE; }
 void CBasePlayer::SelectPrevItem( int iItem ) { }
 CBaseEntity *FindEntityForward( CBaseEntity *pMe ) { return NULL; }
 BOOL CBasePlayer :: FlashlightIsOn( void ) { return FALSE; }
+void CBasePlayer::FlashlightTurnFlash(void) { }
 void CBasePlayer :: FlashlightTurnOn( void ) { }
 void CBasePlayer :: FlashlightTurnOff( void ) { }
 void CBasePlayer :: ForceClientDllUpdate( void ) { }

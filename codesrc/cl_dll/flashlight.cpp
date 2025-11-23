@@ -21,12 +21,9 @@
 #include "hud.h"
 #include "cl_util.h"
 #include "parsemsg.h"
-
+#include "r_efx.h"
 #include <string.h>
 #include <stdio.h>
-
-
-
 DECLARE_MESSAGE(m_Flash, FlashBat)
 DECLARE_MESSAGE(m_Flash, Flashlight)
 
@@ -90,6 +87,8 @@ int CHudFlashlight:: MsgFunc_Flashlight(const char *pszName,  int iSize, void *p
 	int x = READ_BYTE();
 	m_iBat = x;
 	m_flBat = ((float)x)/100.0;
+	gEngfuncs.Con_Printf("Hello Half-Life\n");
+
 
 	return 1;
 }

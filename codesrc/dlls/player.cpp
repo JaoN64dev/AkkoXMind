@@ -3303,11 +3303,6 @@ BOOL CBasePlayer :: FlashlightIsOn( void )
 
 void CBasePlayer :: FlashlightTurnOn( void )
 {
-	if ( !g_pGameRules->FAllowFlashlight() )
-	{
-		return;
-	}
-
 	if ( (pev->weapons & (1<<WEAPON_SUIT)) )
 	{
 		EMIT_SOUND_DYN( ENT(pev), CHAN_WEAPON, SOUND_FLASHLIGHT_ON, 1.0, ATTN_NORM, 0, PITCH_NORM );
@@ -3316,12 +3311,23 @@ void CBasePlayer :: FlashlightTurnOn( void )
 		WRITE_BYTE(1);
 		WRITE_BYTE(m_iFlashBattery);
 		MESSAGE_END();
-
 		m_flFlashLightTime = FLASH_DRAIN_TIME + gpGlobals->time;
 
 	}
 }
 
+void CBasePlayer::FlashlightTurnFlash(void){
+	if ((pev->weapons & (1 << WEAPON_SUIT)))
+	{
+		EMIT_SOUND_DYN(ENT(pev), CHAN_WEAPON, SOUND_FLASHLIGHT_ON, 1.0, ATTN_NORM, 0, PITCH_NORM);
+		MESSAGE_BEGIN(MSG_ONE, gmsgFlashlight, NULL, pev);
+		WRITE_BYTE(2);
+		WRITE_BYTE(m_iFlashBattery);
+		MESSAGE_END();
+		m_flFlashLightTime = FLASH_DRAIN_TIME + gpGlobals->time;
+
+	}
+}
 
 void CBasePlayer :: FlashlightTurnOff( void )
 {

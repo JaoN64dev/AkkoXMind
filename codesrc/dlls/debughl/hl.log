@@ -1,8 +1,8 @@
-﻿Build started 19/11/2025 18:12:21.
-     1>Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\hl.vcxproj" on node 3 (Build target(s)).
+﻿Build started 23/11/2025 17:22:09.
+     1>Project "C:\Users\joaoe\OneDrive\Desktop\AkkoXMind\codesrc\dlls\hl.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\dlls /I..\engine /I..\common /I..\game_shared /I..\pm_shared /I..\ /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D QUIVER /D VOXEL /D QUAKE2 /D VALVE_DLL /D CLIENT_WEAPONS /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_DEPRECATE /D _VC80_UPGRADE=0x0600 /D _WINDLL /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\debughl/" /Fd".\debughl/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt effects.cpp
-         effects.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\dlls /I..\engine /I..\common /I..\game_shared /I..\pm_shared /I..\ /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D QUIVER /D VOXEL /D QUAKE2 /D VALVE_DLL /D CLIENT_WEAPONS /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_DEPRECATE /D _VC80_UPGRADE=0x0600 /D _WINDLL /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\debughl/" /Fd".\debughl/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt player.cpp
+         player.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\debughl\hl.dll" /INCREMENTAL /NOLOGO user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\hl.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\debughl/hl.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\hl.lib" /MACHINE:X86 /SAFESEH /DLL .\debughl/aflock.obj
          .\debughl/agrunt.obj
@@ -17,6 +17,7 @@
          .\debughl/bmodels.obj
          .\debughl/bullsquid.obj
          .\debughl/buttons.obj
+         .\debughl/cameraw.obj
          .\debughl/cbase.obj
          .\debughl/client.obj
          .\debughl/combat.obj
@@ -105,13 +106,13 @@
          .\debughl/world.obj
          .\debughl/xen.obj
          .\debughl/zombie.obj
-         hl.vcxproj -> C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\.\debughl\hl.dll
+         hl.vcxproj -> C:\Users\joaoe\OneDrive\Desktop\AkkoXMind\codesrc\dlls\.\debughl\hl.dll
        PostBuildEvent:
-         copy /Y ".\debughl\hl.dll" "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\..\dlls\hl.dll"
+         copy /Y ".\debughl\hl.dll" "C:\Users\joaoe\OneDrive\Desktop\AkkoXMind\codesrc\..\dlls\hl.dll"
          :VCEnd
-                 1 arquivo(s) copiado(s).
-     1>Done Building Project "C:\Users\pc gamer\Desktop\Complex\AkkoXMind\codesrc\dlls\hl.vcxproj" (Build target(s)).
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\joaoe\OneDrive\Desktop\AkkoXMind\codesrc\dlls\hl.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.32
+Time Elapsed 00:00:01.12

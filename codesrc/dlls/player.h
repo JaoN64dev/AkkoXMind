@@ -227,6 +227,7 @@ public:
 	virtual void	Precache( void );
 	BOOL			IsOnLadder( void );
 	BOOL			FlashlightIsOn( void );
+	void			FlashlightTurnFlash(void);
 	void			FlashlightTurnOn( void );
 	void			FlashlightTurnOff( void );
 	

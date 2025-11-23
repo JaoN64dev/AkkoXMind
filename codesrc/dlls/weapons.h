@@ -591,6 +591,42 @@ private:
 	unsigned short m_usMP52;
 };
 
+
+class CCamera : public CBasePlayerWeapon
+{
+public:
+	void Spawn(void);
+	void Precache(void);
+	int iItemSlot(void) { return 3; }
+	int GetItemInfo(ItemInfo *p);
+	int AddToPlayer(CBasePlayer *pPlayer);
+
+	void PrimaryAttack(void);
+	void SecondaryAttack(void);
+	BOOL Deploy(void);
+	void Reload(void);
+	void WeaponIdle(void);
+	float m_flNextAnimTime;
+	bool FlashOn = false;
+	float m_flNextReload;
+
+	virtual BOOL UseDecrement(void)
+	{
+#if defined( CLIENT_WEAPONS )
+		return TRUE;
+#else
+		return FALSE;
+#endif
+	}
+
+private:
+	unsigned short m_usMP5;
+	unsigned short m_usMP52;
+};
+
+
+
+
 class CCrossbow : public CBasePlayerWeapon
 {
 public:
@@ -1017,36 +1053,5 @@ private:
 
 
 
-class CCamera : public CBasePlayerWeapon
-{
-public:
-	void Spawn(void);
-	void Precache(void);
-	int iItemSlot(void) { return 2; }
-	int GetItemInfo(ItemInfo *p);
-
-	void PrimaryAttack(void);
-	void SecondaryAttack(void);
-	void SnapPic(float flSpread, float flCycleTime, BOOL fUseAutoAim);
-	BOOL Deploy(void);
-	void Flash(void);
-	void ChangeFlash(void);
-	void Reload(void);
-	void WeaponIdle(void);
-
-
-	int m_fInZoom;
-	int withflash = 0;
-	virtual BOOL UseDecrement(void)
-	{
-#if defined( CLIENT_WEAPONS )
-		return TRUE;
-#else
-		return FALSE;
-#endif
-	}
-
-
-};
 
 #endif // WEAPONS_H

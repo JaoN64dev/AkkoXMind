@@ -11,13 +11,19 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - HL25 Build|Win32'">
-    <LocalDebuggerCommand>D:\Games\Steam\steamapps\common\Half-Life\hl.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommand>C:\Program Files %28x86%29\Steam\steamapps\common\Half-Life\hl.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - HL25 Build|Win32'">
-    <LocalDebuggerCommandArguments>-console -32bpp -game trinity -steam</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-steam -dev -console -window -width 1280 -height 720  -game SpiritTrinity</LocalDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - HL25 Build|Win32'">
-    <LocalDebuggerWorkingDirectory>D:\Games\Steam\steamapps\common\Half-Life</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Half-Life</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommand>C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hl.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>-steam -dev -console -window -width 1280 -height 720 -game SpiritTrinity</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Program Files (x86)\Steam\steamapps\common\Half-Life</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
