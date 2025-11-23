@@ -336,6 +336,7 @@ void CHud :: Init( void )
 	HOOK_COMMAND( "ForceCloseCommandMenu", ForceCloseCommandMenu );
 	HOOK_COMMAND( "special", InputPlayerSpecial );
 	HOOK_COMMAND( "togglebrowser", ToggleServerBrowser );
+	camtest = gEngfuncs.pfnRegisterVariable("camtest", "0", FCVAR_CLIENTDLL);
 
 	HOOK_MESSAGE( ValClass );
 	HOOK_MESSAGE( TeamNames );
