@@ -1,8 +1,0 @@
-﻿Build started 23/11/2025 16:13:39.
-     1>Project "C:\Users\joaoe\OneDrive\Desktop\AkkoXMind\codesrc\cl_dll\cl_dll.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v143 (Platform Toolset = 'v143') cannot be found. To build using the v143 build tools, please install v143 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
-     1>Done Building Project "C:\Users\joaoe\OneDrive\Desktop\AkkoXMind\codesrc\cl_dll\cl_dll.vcxproj" (Build target(s)) -- FAILED.
-
-Build FAILED.
-
-Time Elapsed 00:00:00.00
