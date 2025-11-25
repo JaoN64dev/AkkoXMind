@@ -212,7 +212,7 @@ void LinkUserMessages( void )
 	gmsgCurWeapon = REG_USER_MSG("CurWeapon", 3);
 	gmsgGeigerRange = REG_USER_MSG("Geiger", 1);
 	gmsgFlashlight = REG_USER_MSG("Flashlight", 2);
-	gmsgFlashy = REG_USER_MSG("Flashy", -1);
+	gmsgFlashy = REG_USER_MSG("Flashy", 2);
 	gmsgFlashBattery = REG_USER_MSG("FlashBat", 1);
 	gmsgHealth = REG_USER_MSG( "Health", 1 );
 	gmsgDamage = REG_USER_MSG( "Damage", 12 );
@@ -3323,7 +3323,7 @@ void CBasePlayer::FlashlightTurnFlash(void){
 	{
 		EMIT_SOUND_DYN(ENT(pev), CHAN_WEAPON, SOUND_FLASHLIGHT_ON, 1.0, ATTN_NORM, 0, PITCH_NORM);
 		MESSAGE_BEGIN(MSG_ONE, gmsgFlashy, NULL, pev);
-		WRITE_BYTE(1);
+		WRITE_BYTE(2);
 		ALERT(at_console, "yo");
 		WRITE_BYTE(m_iFlashBattery);
 		MESSAGE_END();
