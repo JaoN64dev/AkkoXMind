@@ -87,7 +87,9 @@ int CHudFlashlight:: MsgFunc_Flashlight(const char *pszName,  int iSize, void *p
 	int x = READ_BYTE();
 	m_iBat = x;
 	m_flBat = ((float)x)/100.0;
-	gEngfuncs.Con_Printf("Hello Half-Life\n");
+
+
+	gEngfuncs.Con_Printf("m_fOn = %d", m_fOn);
 
 
 	return 1;
