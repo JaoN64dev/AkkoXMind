@@ -567,7 +567,7 @@ private:
 	SpriteHandle_t						m_hsprLogo;
 	int							m_iLogo;
 	int                         m_iCameraBars;
-	cvar_t* camtest = nullptr;
+	cvar_t* complexcamborder = nullptr;
 	SpriteHandle_t						m_hsprCamera;
 	client_sprite_t				*m_pSpriteList;
 	int							m_iSpriteCount;

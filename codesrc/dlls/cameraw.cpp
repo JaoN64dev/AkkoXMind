@@ -114,9 +114,18 @@ int CCamera::AddToPlayer(CBasePlayer *pPlayer)
 
 BOOL CCamera::Deploy()
 {
-	return DefaultDeploy("models/v_9mmAR.mdl", "models/p_9mmAR.mdl", MP5_DEPLOY, "mp5");
+	BOOL result = DefaultDeploy("models/v_9mmAR.mdl", "models/p_9mmAR.mdl", MP5_DEPLOY, "mp5");
+
+	CLIENT_COMMAND(m_pPlayer->edict(), "cx_vhsborders 1\n");
+
+	return result;
 }
 
+void CCamera::Holster(int skiplocal)
+{
+	CLIENT_COMMAND(m_pPlayer->edict(), "cx_vhsborders 0\n");
+	CBasePlayerWeapon::Holster(skiplocal);
+}
 
 void CCamera::PrimaryAttack()
 {
@@ -179,10 +188,11 @@ void CCamera::PrimaryAttack()
 	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
 }
 
-
+int m_fInZoom;
 
 void CCamera::SecondaryAttack(void)
 {
+	/*
 	// don't fire underwater
 	if (m_pPlayer->pev->waterlevel == 3)
 	{
@@ -231,6 +241,23 @@ void CCamera::SecondaryAttack(void)
 	if (!m_pPlayer->m_rgAmmo[m_iSecondaryAmmoType])
 		// HEV suit - indicate out of ammo condition
 		m_pPlayer->SetSuitUpdate("!HEV_AMO0", FALSE, 0);
+		*/
+
+	if (m_flNextSecondaryAttack > UTIL_WeaponTimeBase())
+		return;
+
+	if (m_fInZoom)
+	{
+		m_pPlayer->pev->fov = m_pPlayer->m_iFOV = 0;
+		m_fInZoom = 0;
+	}
+	else
+	{
+		m_pPlayer->pev->fov = m_pPlayer->m_iFOV = 20;
+		m_fInZoom = 1;
+	}
+
+	m_flNextSecondaryAttack = UTIL_WeaponTimeBase() + 1.0;
 }
 
 void CCamera::Reload()

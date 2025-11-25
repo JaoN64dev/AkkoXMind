@@ -604,6 +604,7 @@ public:
 	void PrimaryAttack(void);
 	void SecondaryAttack(void);
 	BOOL Deploy(void);
+	void Holster(int skiplocal);
 	void Reload(void);
 	void WeaponIdle(void);
 	float m_flNextAnimTime;
