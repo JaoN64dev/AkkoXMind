@@ -175,14 +175,14 @@ int CHud :: Redraw( float flTime, int intermission )
 
 
 	//could do it in other places? yeah. but since hl1 does their demo logo shit here...btw, I'm gonna reactivate that shit :D
-	if (camtest->value != 0)
+	if (complexcamborder->value != 0)
 	{
 
 		if (m_hsprCamera == 0)
-			m_hsprCamera = LoadSprite("sprites/cmplxhud01.spr"); //Just a test rn
+			m_hsprCamera = LoadSprite("sprites/cmplxhud01.spr"); 
 
 
-		SPR_Set(m_hsprCamera, 255, 255, 255); //perhaps we change this later so it behaves dynamically.
+		SPR_Set(m_hsprCamera, 250, 250, 250); //perhaps we change this later so it behaves dynamically.
 
 		const int width = SPR_Width(m_hsprCamera, 0);
 		const int height = SPR_Height(m_hsprCamera, 0);
