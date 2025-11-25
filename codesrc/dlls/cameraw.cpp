@@ -22,7 +22,8 @@
 #include "player.h"
 #include "soundent.h"
 #include "gamerules.h"
-#include "dlight.h"
+#include "r_efx.h"
+
 
 enum mp5_e
 {

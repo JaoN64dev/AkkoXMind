@@ -26,6 +26,7 @@
 #include <stdio.h>
 DECLARE_MESSAGE(m_Flash, FlashBat)
 DECLARE_MESSAGE(m_Flash, Flashlight)
+DECLARE_MESSAGE(m_Flash, Flashy);
 
 #define BAT_NAME "sprites/%d_Flashlight.spr"
 
@@ -35,6 +36,7 @@ int CHudFlashlight::Init(void)
 	m_fOn = 0;
 
 	HOOK_MESSAGE(Flashlight);
+	HOOK_MESSAGE(Flashy);
 	HOOK_MESSAGE(FlashBat);
 
 	m_iFlags |= HUD_ACTIVE;
@@ -64,6 +66,8 @@ int CHudFlashlight::VidInit(void)
 	m_prcBeam = &gHUD.GetSpriteRect(HUD_flash_beam);
 	m_iWidth = m_prc2->right - m_prc2->left;
 
+	gEngfuncs.pfnConsolePrint()
+
 	return 1;
 };
 
@@ -89,11 +93,23 @@ int CHudFlashlight:: MsgFunc_Flashlight(const char *pszName,  int iSize, void *p
 	m_flBat = ((float)x)/100.0;
 
 
-	gEngfuncs.Con_Printf("m_fOn = %d", m_fOn);
-
-
 	return 1;
 }
+
+int CHudFlashlight::MsgFunc_Flashy(const char *pszName, int iSize, void *pbuf)
+{
+	dlight_t *pLight = gEngfuncs.pEfxAPI->CL_AllocDlight(0); // Create the light with the key #0 (let the engine pick up the first free slot)
+	pLight->die = 0.1f; // 0.1s is more than enough, the engine will destroy the light for us when it's done
+	pLight->origin = gEngfuncs.GetLocalPlayer()->origin; // Place the light at the origin of the local player
+	pLight->radius = 180.0f; // The radius in Hammer units of the light, 180 is almost the double or maybe x2.5 of Half-Life flashlight's size as an indicator
+	pLight->color.r = 255.0f; // Let's make a red light
+	pLight->color.g = 0.0f;
+	pLight->color.b = 0.0f;
+	gEngfuncs.Con_Printf("yooooooooooooo");
+	gEngfuncs.pfnConsolePrint("hello");
+	return 1;
+}
+
 
 int CHudFlashlight::Draw(float flTime)
 {

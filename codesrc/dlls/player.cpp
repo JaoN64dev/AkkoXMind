@@ -152,6 +152,7 @@ int gmsgShake = 0;
 int gmsgFade = 0;
 int gmsgSelAmmo = 0;
 int gmsgFlashlight = 0;
+int gmsgFlashy = 0;
 int gmsgFlashBattery = 0;
 int gmsgResetHUD = 0;
 int gmsgInitHUD = 0;
@@ -211,6 +212,7 @@ void LinkUserMessages( void )
 	gmsgCurWeapon = REG_USER_MSG("CurWeapon", 3);
 	gmsgGeigerRange = REG_USER_MSG("Geiger", 1);
 	gmsgFlashlight = REG_USER_MSG("Flashlight", 2);
+	gmsgFlashy = REG_USER_MSG("Flashy", -1);
 	gmsgFlashBattery = REG_USER_MSG("FlashBat", 1);
 	gmsgHealth = REG_USER_MSG( "Health", 1 );
 	gmsgDamage = REG_USER_MSG( "Damage", 12 );
@@ -3320,8 +3322,9 @@ void CBasePlayer::FlashlightTurnFlash(void){
 	if ((pev->weapons & (1 << WEAPON_SUIT)))
 	{
 		EMIT_SOUND_DYN(ENT(pev), CHAN_WEAPON, SOUND_FLASHLIGHT_ON, 1.0, ATTN_NORM, 0, PITCH_NORM);
-		MESSAGE_BEGIN(MSG_ONE, gmsgFlashlight, NULL, pev);
-		WRITE_BYTE(2);
+		MESSAGE_BEGIN(MSG_ONE, gmsgFlashy, NULL, pev);
+		WRITE_BYTE(1);
+		ALERT(at_console, "yo");
 		WRITE_BYTE(m_iFlashBattery);
 		MESSAGE_END();
 		m_flFlashLightTime = FLASH_DRAIN_TIME + gpGlobals->time;

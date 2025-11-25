@@ -430,6 +430,7 @@ public:
 	void Reset( void );
 	int MsgFunc_Flashlight(const char *pszName,  int iSize, void *pbuf );
 	int MsgFunc_FlashBat(const char *pszName,  int iSize, void *pbuf );
+	int MsgFunc_Flashy(const char *pszName, int iSize, void *pbuf);
 	
 private:
 	SpriteHandle_t m_SpriteHandle_t1;
