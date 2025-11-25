@@ -39,7 +39,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - HL25 Build|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -146,7 +146,7 @@
       <OutputFile>.\Debug/cl_dll.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>copy /Y "$(OutDir)$(TargetName)$(TargetExt)" "$(SolutionDir)../cl_dlls/$(TargetName)$(TargetExt)"</Command>
+      <Command>copy /Y "$(OutDir)$(TargetName)$(TargetExt)" "$(SolutionDir)..\dlls\$(TargetName)$(TargetExt)"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy $(TargetName)$(TargetExt) to cl_dlls dir</Message>

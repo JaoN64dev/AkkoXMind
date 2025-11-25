@@ -667,7 +667,7 @@
 "spawnflags" "0"
 "skill" "0"
 "angles" "-90 0 0"
-"lip" "20"
+"lip" "40"
 "targetname" "elven01"
 {
 ( 64 32 192 ) ( 64 32 0 ) ( 64 48 192 ) NULL [ 0 1 0 -0 ] [ 0 0 -1 0 ] 0 1 1
@@ -707,12 +707,7 @@
 }
 }
 {
-"classname" "light_spot"
-"angles" "0 90 0"
-"_sky" "0"
-"pitch" "-90"
-"_cone2" "45"
-"_cone" "30"
+"classname" "light"
 "_falloff" "2"
 "m_iTurnOffStyle" "0"
 "m_iTurnOffTime" "0"
@@ -722,15 +717,11 @@
 "m_iOnStyle" "0"
 "style" "0"
 "_light" "185 237 255 110"
+"angles" "0 90 0"
 "origin" "16 -352 160"
 }
 {
-"classname" "light_spot"
-"angles" "0 270 0"
-"_sky" "0"
-"pitch" "-90"
-"_cone2" "45"
-"_cone" "30"
+"classname" "light"
 "_falloff" "2"
 "m_iTurnOffStyle" "0"
 "m_iTurnOffTime" "0"
@@ -740,6 +731,7 @@
 "m_iOnStyle" "0"
 "style" "0"
 "_light" "185 237 255 110"
+"angles" "0 270 0"
 "origin" "16 -144 160"
 }
 {
