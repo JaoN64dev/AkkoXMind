@@ -45,6 +45,7 @@
 #include "GameStudioModelRenderer.h"
 
 int gmsgCameraFlash = 0;
+int gmsgHudText = 0;
 extern CGameStudioModelRenderer g_StudioRenderer;
 extern engine_studio_api_t IEngineStudio;
 //RENDERERS END

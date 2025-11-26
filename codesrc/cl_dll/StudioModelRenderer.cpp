@@ -46,6 +46,8 @@ Transparency code by Neil "Jed" Jedrzejewski
 // Global engine <-> studio model rendering code interface
 engine_studio_api_t IEngineStudio;
 
+//COMPLEEEEEEEEEEEEX!
+
 //===========================================
 //	ARB SHADER
 //===========================================
@@ -2862,6 +2864,34 @@ void CStudioModelRenderer::StudioMergeBones ( model_t *m_pSubModel )
 	}
 }
 
+//COMPLEEEEEEEEEEEEX!
+#include <cmath>
+
+extern unsigned short d_8to16table[256];
+
+typedef unsigned char pixel_t;
+extern void R_GenTurbTile(pixel_t* pbasetex, void* pdest);
+
+void Substance_ApplyWarp(cl_entity_t* ent, mstudiotexture_t* tex)
+{
+	if (ent->curstate.renderfx != 133)
+		return;
+
+	if (!tex) return;
+	if (!tex->index) return;
+	if (tex->width != 64 || tex->height != 64)
+		return; 
+
+	byte* src = (byte*)tex->index;
+
+	static byte warped[64 * 64];
+
+	R_GenTurbTile(src, warped); // o tal warp
+
+	// sobrescreve o conteudo da textura 
+	memcpy(src, warped, 64 * 64);
+}
+
 /*
 ====================
 StudioDrawModel
@@ -2953,11 +2983,19 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 
 	if ( flags & STUDIO_RENDER && !(m_pCurrentEntity->curstate.effects & FL_NOMODEL) && m_pCvarDrawModels->value >= 1 )
 	{
+		mstudiotexture_t* textures = (mstudiotexture_t*)((byte*)m_pTextureHeader + m_pTextureHeader->textureindex);
+
+		for (int i = 0; i < m_pTextureHeader->numtextures; i++)
+		{
+			Substance_ApplyWarp(m_pCurrentEntity, &textures[i]);
+		}
+
 		StudioRenderModel();
 	}
 
 	return 1;
 }
+
 
 /*
 ====================

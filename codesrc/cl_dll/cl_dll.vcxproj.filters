@@ -1,468 +1,153 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{37baf626-5501-42b5-959f-296fb6f6e05c}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;for;f90</Extensions>
-    </Filter>
-    <Filter Include="Source Files\hl">
-      <UniqueIdentifier>{f1542a6a-caf9-4e23-a59d-6a33ea382fa6}</UniqueIdentifier>
-      <Extensions>*.CPP</Extensions>
-    </Filter>
-    <Filter Include="Source Files\engine">
-      <UniqueIdentifier>{2a28c399-c3b5-4aa5-ad2c-6c1adc55d27b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{2787a1ad-78e1-4bb6-88e3-746b0917e6f9}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
-    </Filter>
-    <Filter Include="Header Files\engine">
-      <UniqueIdentifier>{d83ac706-0e15-4901-be11-1f101a0778b5}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="..\dlls\cameraw.cpp" />
+    <ClCompile Include="ammo.cpp" />
+    <ClCompile Include="ammo_secondary.cpp" />
+    <ClCompile Include="ammohistory.cpp" />
+    <ClCompile Include="battery.cpp" />
+    <ClCompile Include="cdll_int.cpp" />
+    <ClCompile Include="com_weapons.cpp" />
+    <ClCompile Include="death.cpp" />
+    <ClCompile Include="demo.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="environment.cpp" />
+    <ClCompile Include="ev_common.cpp" />
+    <ClCompile Include="events.cpp" />
+    <ClCompile Include="flashlight.cpp" />
+    <ClCompile Include="GameStudioModelRenderer.cpp" />
+    <ClCompile Include="geiger.cpp" />
+    <ClCompile Include="health.cpp" />
+    <ClCompile Include="hud.cpp" />
+    <ClCompile Include="hud_msg.cpp" />
+    <ClCompile Include="hud_redraw.cpp" />
+    <ClCompile Include="hud_servers.cpp" />
+    <ClCompile Include="hud_spectator.cpp" />
+    <ClCompile Include="hud_update.cpp" />
+    <ClCompile Include="in_camera.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="inputw32.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="message.cpp" />
+    <ClCompile Include="overview.cpp" />
+    <ClCompile Include="parsemsg.cpp" />
+    <ClCompile Include="..\pm_shared\pm_debug.c" />
+    <ClCompile Include="..\pm_shared\pm_math.c" />
+    <ClCompile Include="..\pm_shared\pm_shared.c" />
+    <ClCompile Include="saytext.cpp" />
+    <ClCompile Include="smokegrenade.cpp" />
+    <ClCompile Include="status_icons.cpp" />
+    <ClCompile Include="statusbar.cpp" />
+    <ClCompile Include="studio_util.cpp" />
+    <ClCompile Include="text_message.cpp" />
+    <ClCompile Include="train.cpp" />
+    <ClCompile Include="tri.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="..\game_shared\vgui_checkbutton2.cpp" />
+    <ClCompile Include="vgui_ClassMenu.cpp" />
+    <ClCompile Include="vgui_ConsolePanel.cpp" />
+    <ClCompile Include="vgui_ControlConfigPanel.cpp" />
+    <ClCompile Include="vgui_CustomObjects.cpp" />
+    <ClCompile Include="..\game_shared\vgui_grid.cpp" />
+    <ClCompile Include="..\game_shared\vgui_helpers.cpp" />
+    <ClCompile Include="vgui_int.cpp" />
+    <ClCompile Include="..\game_shared\vgui_listbox.cpp" />
+    <ClCompile Include="..\game_shared\vgui_loadtga.cpp" />
+    <ClCompile Include="vgui_MOTDWindow.cpp" />
+    <ClCompile Include="vgui_SchemeManager.cpp" />
+    <ClCompile Include="vgui_ScorePanel.cpp" />
+    <ClCompile Include="vgui_ServerBrowser.cpp" />
+    <ClCompile Include="vgui_SpectatorPanel.cpp" />
+    <ClCompile Include="vgui_TeamFortressViewport.cpp" />
+    <ClCompile Include="vgui_teammenu.cpp" />
+    <ClCompile Include="view.cpp" />
+    <ClCompile Include="..\dlls\crossbow.cpp" />
+    <ClCompile Include="..\dlls\crowbar.cpp" />
+    <ClCompile Include="..\dlls\egon.cpp" />
+    <ClCompile Include="ev_hldm.cpp" />
+    <ClCompile Include="..\dlls\gauss.cpp" />
+    <ClCompile Include="..\dlls\handgrenade.cpp" />
+    <ClCompile Include="hl\hl_baseentity.cpp" />
+    <ClCompile Include="hl\hl_events.cpp" />
+    <ClCompile Include="hl\hl_objects.cpp" />
+    <ClCompile Include="hl\hl_weapons.cpp" />
+    <ClCompile Include="..\dlls\wpn_shared\hl_wpn_glock.cpp" />
+    <ClCompile Include="..\dlls\hornetgun.cpp" />
+    <ClCompile Include="..\common\interface.cpp" />
+    <ClCompile Include="..\dlls\mp5.cpp" />
+    <ClCompile Include="..\dlls\python.cpp" />
+    <ClCompile Include="..\dlls\rpg.cpp" />
+    <ClCompile Include="..\dlls\satchel.cpp" />
+    <ClCompile Include="..\dlls\shotgun.cpp" />
+    <ClCompile Include="..\dlls\squeakgrenade.cpp" />
+    <ClCompile Include="..\dlls\tripmine.cpp" />
+    <ClCompile Include="..\game_shared\vgui_scrollbar2.cpp" />
+    <ClCompile Include="..\game_shared\vgui_slider2.cpp" />
+    <ClCompile Include="..\game_shared\voice_banmgr.cpp" />
+    <ClCompile Include="..\game_shared\voice_status.cpp" />
+    <ClCompile Include="bsprenderer.cpp" />
+    <ClCompile Include="frustum.cpp" />
+    <ClCompile Include="mirrormanager.cpp" />
+    <ClCompile Include="particle_engine.cpp" />
+    <ClCompile Include="propmanager.cpp" />
+    <ClCompile Include="rendererdefs.cpp" />
+    <ClCompile Include="StudioModelRenderer.cpp" />
+    <ClCompile Include="textureloader.cpp" />
+    <ClCompile Include="watershader.cpp" />
+    <ClCompile Include="complex_surfs.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ammo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ammo_secondary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ammohistory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="battery.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cdll_int.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="com_weapons.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="death.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="demo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ev_common.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="events.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="flashlight.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStudioModelRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="geiger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="health.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hud.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_msg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_redraw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_servers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_spectator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_update.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="in_camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="inputw32.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="message.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="overview.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="parsemsg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\pm_shared\pm_debug.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\pm_shared\pm_math.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\pm_shared\pm_shared.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="saytext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="status_icons.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="statusbar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="studio_util.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="text_message.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="train.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tri.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="util.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\vgui_checkbutton2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_ClassMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_ConsolePanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_ControlConfigPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_CustomObjects.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\vgui_grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\vgui_helpers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_int.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\vgui_listbox.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\vgui_loadtga.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_MOTDWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_SchemeManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_ScorePanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_ServerBrowser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_SpectatorPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_TeamFortressViewport.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vgui_teammenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="view.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\crossbow.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\crowbar.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\egon.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="ev_hldm.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\gauss.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\handgrenade.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="hl\hl_baseentity.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="hl\hl_events.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="hl\hl_objects.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="hl\hl_weapons.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\wpn_shared\hl_wpn_glock.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\hornetgun.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common\interface.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\mp5.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\python.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\rpg.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\satchel.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\shotgun.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\squeakgrenade.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\tripmine.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\vgui_scrollbar2.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\vgui_slider2.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\voice_banmgr.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game_shared\voice_status.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="bsprenderer.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="frustum.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="mirrormanager.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="particle_engine.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="propmanager.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="rendererdefs.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="StudioModelRenderer.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="textureloader.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="watershader.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="environment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\dlls\cameraw.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="flash.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-    <ClCompile Include="smokegrenade.cpp">
-      <Filter>Source Files\hl</Filter>
-    </ClCompile>
-=======
->>>>>>> cb02691b1d8789749f2da2b9e11f48799e8c758d
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="parsemsg.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ammo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ammohistory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cl_dll.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="com_weapons.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="demo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ev_hldm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="eventscripts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStudioModelRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="health.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hud.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hud_iface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hud_servers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hud_servers_priv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hud_spectator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="in_defs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\itrackeruser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="kbutton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="overview.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\pm_shared\pm_debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\pm_shared\pm_defs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\pm_shared\pm_info.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\pm_shared\pm_materials.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\pm_shared\pm_movevars.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\pm_shared\pm_shared.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="studio_util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util_vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_ConsolePanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_ControlConfigPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_int.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_SchemeManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_ScorePanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_ServerBrowser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_SpectatorPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vgui_TeamFortressViewport.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="view.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\game_shared\voice_banmgr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\game_shared\voice_status.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\game_shared\voice_vgui_tweakdlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wrect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bsprenderer.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="frustum.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="mirrormanager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="particle_engine.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="propmanager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="rendererdefs.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="StudioModelRenderer.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="textureloader.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="watershader.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="environment.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
+    <ClInclude Include="environment.h" />
+    <ClInclude Include="parsemsg.h" />
+    <ClInclude Include="ammo.h" />
+    <ClInclude Include="ammohistory.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="cl_dll.h" />
+    <ClInclude Include="com_weapons.h" />
+    <ClInclude Include="demo.h" />
+    <ClInclude Include="ev_hldm.h" />
+    <ClInclude Include="eventscripts.h" />
+    <ClInclude Include="GameStudioModelRenderer.h" />
+    <ClInclude Include="health.h" />
+    <ClInclude Include="hud.h" />
+    <ClInclude Include="hud_iface.h" />
+    <ClInclude Include="hud_servers.h" />
+    <ClInclude Include="hud_servers_priv.h" />
+    <ClInclude Include="hud_spectator.h" />
+    <ClInclude Include="in_defs.h" />
+    <ClInclude Include="..\common\itrackeruser.h" />
+    <ClInclude Include="kbutton.h" />
+    <ClInclude Include="overview.h" />
+    <ClInclude Include="..\pm_shared\pm_debug.h" />
+    <ClInclude Include="..\pm_shared\pm_defs.h" />
+    <ClInclude Include="..\pm_shared\pm_info.h" />
+    <ClInclude Include="..\pm_shared\pm_materials.h" />
+    <ClInclude Include="..\pm_shared\pm_movevars.h" />
+    <ClInclude Include="..\pm_shared\pm_shared.h" />
+    <ClInclude Include="studio_util.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="util_vector.h" />
+    <ClInclude Include="vgui_ConsolePanel.h" />
+    <ClInclude Include="vgui_ControlConfigPanel.h" />
+    <ClInclude Include="vgui_int.h" />
+    <ClInclude Include="vgui_SchemeManager.h" />
+    <ClInclude Include="vgui_ScorePanel.h" />
+    <ClInclude Include="vgui_ServerBrowser.h" />
+    <ClInclude Include="vgui_SpectatorPanel.h" />
+    <ClInclude Include="vgui_TeamFortressViewport.h" />
+    <ClInclude Include="view.h" />
+    <ClInclude Include="..\game_shared\voice_banmgr.h" />
+    <ClInclude Include="..\game_shared\voice_status.h" />
+    <ClInclude Include="..\game_shared\voice_vgui_tweakdlg.h" />
+    <ClInclude Include="wrect.h" />
+    <ClInclude Include="bsprenderer.h" />
+    <ClInclude Include="frustum.h" />
+    <ClInclude Include="mirrormanager.h" />
+    <ClInclude Include="particle_engine.h" />
+    <ClInclude Include="propmanager.h" />
+    <ClInclude Include="rendererdefs.h" />
+    <ClInclude Include="StudioModelRenderer.h" />
+    <ClInclude Include="textureloader.h" />
+    <ClInclude Include="watershader.h" />
   </ItemGroup>
 </Project>

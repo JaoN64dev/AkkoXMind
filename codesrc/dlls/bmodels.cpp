@@ -141,6 +141,27 @@ void CFuncWallToggle :: Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_
 }
 
 
+//COMPLEEEEEEEEEEEEX!
+
+class CFuncSubstance : public CBaseEntity
+{
+public:
+	void Spawn();
+};
+
+LINK_ENTITY_TO_CLASS(func_eldritchportal, CFuncSubstance);
+
+void CFuncSubstance::Spawn()
+{
+	pev->solid = SOLID_BSP;
+	pev->movetype = MOVETYPE_PUSH;
+	SET_MODEL(edict(), STRING(pev->model));
+	pev->skin = 0;
+
+	pev->rendermode = kRenderNormal;
+	pev->renderfx = 133;
+}
+
 #define SF_CONVEYOR_VISUAL		0x0001
 #define SF_CONVEYOR_NOTSOLID	0x0002
 
