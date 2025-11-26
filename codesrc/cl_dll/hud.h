@@ -20,6 +20,7 @@
 // CHud handles the message, calculation, and drawing the HUD
 //
 
+//eu esqueci aonde isso vai
 
 #define RGB_YELLOWISH 0x00FFA000 //255,160,0
 #define RGB_REDISH 0x00FF1010 //255,160,0
@@ -204,14 +205,12 @@ private:
 //-----------------------------------------------------
 //
 
-class CHudFlash : public CHudBase
+class CHudCameraFlash : public CHudBase
 {
 public:
-	int Init(void);
-	void MsgFunc_Flash(const char *pszName, int iSize, void *pbuf);
+
+	int MsgFunc_CameraFlash(const char *pszName, int iSize, void *pbuf);
 };
-
-
 //
 //-----------------------------------------------------
 //
@@ -640,7 +639,7 @@ public:
 	CHudBattery		m_Battery;
 	CHudTrain		m_Train;
 	CHudFlashlight	m_Flash;
-	CHudFlash		m_Flashy;
+	CHudCameraFlash		m_CameraFlash;
 	CHudMessage		m_Message;
 	CHudStatusBar   m_StatusBar;
 	CHudDeathNotice m_DeathNotice;
@@ -663,13 +662,13 @@ public:
 	int _cdecl MsgFunc_Damage(const char *pszName, int iSize, void *pbuf );
 	int _cdecl MsgFunc_GameMode(const char *pszName, int iSize, void *pbuf );
 	int _cdecl MsgFunc_Logo(const char *pszName,  int iSize, void *pbuf);
-	int MsgFunc_Teleport(const char *pszName, int iSize, void *pbuf);
+	int MsgFunc_Teleport(const char* pszName, int iSize, void* pbuf);
 	int _cdecl MsgFunc_ResetHUD(const char *pszName,  int iSize, void *pbuf);
 	void _cdecl MsgFunc_InitHUD( const char *pszName, int iSize, void *pbuf );
 	void _cdecl MsgFunc_ViewMode( const char *pszName, int iSize, void *pbuf );
 	int _cdecl MsgFunc_SetFOV(const char *pszName,  int iSize, void *pbuf);
 	int  _cdecl MsgFunc_Concuss( const char *pszName, int iSize, void *pbuf );
-	
+	int  _cdecl MsgFunc_CameraFlash(const char* pszName, int iSize, void* pbuf);
 
 	// Screen information
 	SCREENINFO	m_scrinfo;
@@ -701,7 +700,6 @@ public:
 	int  _cdecl MsgFunc_SkyMark_W( const char *pszName, int iSize, void *pbuf );
 	int  _cdecl MsgFunc_DynLight( const char *pszName, int iSize, void *pbuf );
 	int  _cdecl MsgFunc_CreateSystem( const char *pszName, int iSize, void *pbuf );
-	int __MsgFunc_Teleport(const char* pszName, int iSize, void* pbuf);
 //RENDERERS END
 };
 
@@ -710,6 +708,7 @@ class TeamFortressViewport;
 extern CHud gHUD;
 extern TeamFortressViewport *gViewPort;
 
+extern int gmsgTeleport;
 extern int g_iPlayerClass;
 extern int g_iTeamNumber;
 extern int g_iUser1;

@@ -25,8 +25,6 @@
 #include "r_efx.h"
 
 
-extern int gmsgTeleport;
-
 enum mp5_e
 {
 	MP5_LONGIDLE = 0,
@@ -199,12 +197,12 @@ void CCamera::PrimaryAttack()
 #endif
 	{
 	
-		vecDir = m_pPlayer->FireBulletsPlayer(1, vecSrc, vecAiming, VECTOR_CONE_6DEGREES, 8192, BULLET_PLAYER_MP5, 2, 0, m_pPlayer->pev, m_pPlayer->random_seed);
+		vecDir = m_pPlayer->FireBulletsPlayer(1, vecSrc, vecAiming, VECTOR_CONE_1DEGREES, 8192, BULLET_PLAYER_MP5, 2, 0, m_pPlayer->pev, m_pPlayer->random_seed);
 	}
 	else
 	{
 		// single player spread
-		vecDir = m_pPlayer->FireBulletsPlayer(1, vecSrc, vecAiming, VECTOR_CONE_3DEGREES, 8192, BULLET_PLAYER_MP5, 2, 0, m_pPlayer->pev, m_pPlayer->random_seed);
+		vecDir = m_pPlayer->FireBulletsPlayer(1, vecSrc, vecAiming, VECTOR_CONE_1DEGREES, 8192, BULLET_PLAYER_MP5, 2, 0, m_pPlayer->pev, m_pPlayer->random_seed);
 	}
 
 	int flags;
@@ -226,6 +224,19 @@ void CCamera::PrimaryAttack()
 		m_flNextPrimaryAttack = UTIL_WeaponTimeBase() + 0.1;
 
 	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
+
+	if (FlashOn)
+	{
+		MESSAGE_BEGIN(MSG_ONE, gmsgCameraFlash, NULL, this->pev);
+		WRITE_COORD(pev->origin.x);
+		WRITE_COORD(pev->origin.y);
+		WRITE_COORD(pev->origin.z);
+		MESSAGE_END();
+	}
+	else
+	{
+		return;  
+	}
 
 }
 

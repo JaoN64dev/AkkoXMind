@@ -111,6 +111,20 @@ void CRat :: Spawn()
 	MonsterInit();
 }
 
+int CRat::ISoundMask(void)
+{
+	return bits_SOUND_WORLD;
+}
+
+void CRat::Killed(entvars_t *pevAttacker, int iGib)
+{
+	CBaseMonster::Killed(pevAttacker, iGib);
+}
+
+void CRat::Touch(CBaseEntity *pOther)
+{
+	// se não usa touch, deixe vazio mesmo
+}
 //=========================================================
 // Precache - precaches all resources this monster needs
 //=========================================================
@@ -124,10 +138,12 @@ void CRat :: Precache()
 //=========================================================
 void CRat::MonsterThink()
 {
-	if (FNullEnt(FIND_CLIENT_IN_PVS(edict())) && !HaveCamerasInPVS(edict()))
-		SetNextThink(RANDOM_FLOAT(1, 1.5));
+	if (FNullEnt(FIND_CLIENT_IN_PVS(edict())))
+		pev->nextthink = gpGlobals->time + 1.5f;
+
 	else
-		SetNextThink(0.1);// keep monster thinking
+		pev->nextthink = gpGlobals->time + 0.1f;
+
 
 	float flInterval = StudioFrameAdvance(); // animate
 
@@ -135,7 +151,7 @@ void CRat::MonsterThink()
 	{
 		// if light value hasn't been collection for the first time yet, 
 		// suspend the creature for a second so the world finishes spawning, then we'll collect the light level.
-		SetNextThink(1);
+		pev->nextthink = gpGlobals->time + 1.0f;
 		m_fLightHacked = TRUE;
 		return;
 	}
@@ -345,7 +361,7 @@ void CRat::Look(int iDistance)
 
 	ClearConditions(bits_COND_SEE_HATE | bits_COND_SEE_DISLIKE | bits_COND_SEE_ENEMY | bits_COND_SEE_FEAR);
 
-	if (FNullEnt(FIND_CLIENT_IN_PVS(edict())) && !HaveCamerasInPVS(edict()))
+	if (FNullEnt(FIND_CLIENT_IN_PVS(edict())))
 		return;
 
 	m_pLink = NULL;
@@ -369,7 +385,7 @@ void CRat::Look(int iDistance)
 				case R_NO:
 					break;
 				default:
-					ALERT(at_debug, "%s can't assess %s\n",
+					ALERT(at_aiconsole, "%s can't assess %s\n",
 						STRING(pev->classname),
 						STRING(pSightEnt->pev->classname));
 					break;

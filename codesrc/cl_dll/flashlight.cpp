@@ -92,23 +92,6 @@ int CHudFlashlight:: MsgFunc_Flashlight(const char *pszName,  int iSize, void *p
 	return 1;
 }
 
-<<<<<<< HEAD
-int CHudFlashlight::MsgFunc_Flashy(const char *pszName, int iSize, void *pbuf)
-{
-	dlight_t *pLight = gEngfuncs.pEfxAPI->CL_AllocDlight(0); // Create the light with the key #0 (let the engine pick up the first free slot)
-	pLight->die = 0.1f; // 0.1s is more than enough, the engine will destroy the light for us when it's done
-	pLight->origin = gEngfuncs.GetLocalPlayer()->origin; // Place the light at the origin of the local player
-	pLight->radius = 180.0f; // The radius in Hammer units of the light, 180 is almost the double or maybe x2.5 of Half-Life flashlight's size as an indicator
-	pLight->color.r = 255.0f; // Let's make a red light
-	pLight->color.g = 0.0f;
-	pLight->color.b = 0.0f;
-	gEngfuncs.Con_Printf("yooooooooooooo");
-	gEngfuncs.pfnConsolePrint("hello");
-	return 1;
-}
-
-=======
->>>>>>> cb02691b1d8789749f2da2b9e11f48799e8c758d
 
 int CHudFlashlight::Draw(float flTime)
 {

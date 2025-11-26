@@ -44,9 +44,12 @@
 #include "StudioModelRenderer.h"
 #include "GameStudioModelRenderer.h"
 
+int gmsgCameraFlash = 0;
 extern CGameStudioModelRenderer g_StudioRenderer;
 extern engine_studio_api_t IEngineStudio;
 //RENDERERS END
+
+DECLARE_MESSAGE(m_CameraFlash, CameraFlash);
 
 class CHLVoiceStatusHelper : public IVoiceStatusHelper
 {
@@ -104,10 +107,6 @@ void ShutdownInput (void);
 int __MsgFunc_Logo(const char *pszName, int iSize, void *pbuf)
 {
 	return gHUD.MsgFunc_Logo(pszName, iSize, pbuf );
-}
-int __MsgFunc_Teleport(const char *pszName, int iSize, void *pbuf)
-{
-	return gHUD.MsgFunc_Teleport(pszName, iSize, pbuf);
 }
 //DECLARE_MESSAGE(m_Logo, Logo)
 int __MsgFunc_ResetHUD(const char *pszName, int iSize, void *pbuf)
@@ -326,14 +325,13 @@ int __MsgFunc_Particle(const char *pszName, int iSize, void *pbuf )
 void CHud :: Init( void )
 {
 	HOOK_MESSAGE( Logo );
-	HOOK_MESSAGE( Teleport );
+	HOOK_MESSAGE( CameraFlash );
 	HOOK_MESSAGE( ResetHUD );
 	HOOK_MESSAGE( GameMode );
 	HOOK_MESSAGE( InitHUD );
 	HOOK_MESSAGE( ViewMode );
 	HOOK_MESSAGE( SetFOV );
 	HOOK_MESSAGE( Concuss );
-
 	// TFFree CommandMenu
 	HOOK_COMMAND( "+commandmenu", OpenCommandMenu );
 	HOOK_COMMAND( "-commandmenu", CloseCommandMenu );
@@ -590,7 +588,7 @@ int CHud::MsgFunc_Logo(const char *pszName,  int iSize, void *pbuf)
 float g_lastFOV = 0.0;
 
 
-int CHud::MsgFunc_Teleport(const char *pszName, int iSize, void *pbuf)
+int CHudCameraFlash::MsgFunc_CameraFlash(const char *pszName, int iSize, void *pbuf)
 {
 	BEGIN_READ(pbuf, iSize);
 
