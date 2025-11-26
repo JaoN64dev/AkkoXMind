@@ -52,6 +52,9 @@ void CCamera::Spawn()
 	m_iId = WEAPON_MP5;
 
 	m_iDefaultAmmo = MP5_DEFAULT_GIVE;
+	m_IdealZoom = 90;
+	m_ZoomSpeed = 2.5;
+	m_fInZoom = 0;
 
 	FallInit();// get ready to fall down.
 }
@@ -128,6 +131,36 @@ void CCamera::Holster(int skiplocal)
 	CBasePlayerWeapon::Holster(skiplocal);
 }
 
+void CCamera::ItemPostFrame()
+{
+	// chama o original
+	CBasePlayerWeapon::ItemPostFrame();
+
+	float currentzoom = m_pPlayer->pev->fov;
+
+	if (currentzoom == 0)
+		currentzoom = 90; // hl usa 0 como "default fov"
+
+	if (currentzoom != m_IdealZoom)
+	{
+		float delta = m_IdealZoom - currentzoom;
+
+		// velocidade (quanto ele se move por frame)
+		float step = m_ZoomSpeed * gpGlobals->frametime;
+
+		// aproxima suavemente
+		if (fabs(delta) <= step)
+			currentzoom = m_IdealZoom;
+		else
+			currentzoom += (delta > 0 ? step : -step);
+
+		// aplica
+		m_pPlayer->pev->fov = m_pPlayer->m_iFOV = currentzoom;
+	}
+
+	m_flNextSecondaryAttack = UTIL_WeaponTimeBase() + 1.0;
+}
+
 void CCamera::PrimaryAttack()
 {
 	// don't fire underwater
@@ -187,6 +220,7 @@ void CCamera::PrimaryAttack()
 		m_flNextPrimaryAttack = UTIL_WeaponTimeBase() + 0.1;
 
 	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
+
 }
 
 int m_fInZoom;
@@ -197,15 +231,15 @@ void CCamera::SecondaryAttack(void)
 	// don't fire underwater
 	if (m_pPlayer->pev->waterlevel == 3)
 	{
-		PlayEmptySound();
-		m_flNextPrimaryAttack = 0.15;
-		return;
+	PlayEmptySound();
+	m_flNextPrimaryAttack = 0.15;
+	return;
 	}
 
 	if (m_pPlayer->m_rgAmmo[m_iSecondaryAmmoType] == 0)
 	{
-		PlayEmptySound();
-		return;
+	PlayEmptySound();
+	return;
 	}
 
 	m_pPlayer->m_iWeaponVolume = NORMAL_GUN_VOLUME;
@@ -223,15 +257,15 @@ void CCamera::SecondaryAttack(void)
 
 	// we don't add in player velocity anymore.
 	CGrenade::ShootContact(m_pPlayer->pev,
-		m_pPlayer->pev->origin + m_pPlayer->pev->view_ofs + gpGlobals->v_forward * 16,
-		gpGlobals->v_forward * 800);
+	m_pPlayer->pev->origin + m_pPlayer->pev->view_ofs + gpGlobals->v_forward * 16,
+	gpGlobals->v_forward * 800);
 
 	int flags;
-#if defined( CLIENT_WEAPONS )
+	#if defined( CLIENT_WEAPONS )
 	flags = FEV_NOTHOST;
-#else
+	#else
 	flags = 0;
-#endif
+	#endif
 
 	PLAYBACK_EVENT(flags, m_pPlayer->edict(), m_usMP52);
 
@@ -240,25 +274,26 @@ void CCamera::SecondaryAttack(void)
 	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 5;// idle pretty soon after shooting.
 
 	if (!m_pPlayer->m_rgAmmo[m_iSecondaryAmmoType])
-		// HEV suit - indicate out of ammo condition
-		m_pPlayer->SetSuitUpdate("!HEV_AMO0", FALSE, 0);
-		*/
+	// HEV suit - indicate out of ammo condition
+	m_pPlayer->SetSuitUpdate("!HEV_AMO0", FALSE, 0);
+	*/
 
 	if (m_flNextSecondaryAttack > UTIL_WeaponTimeBase())
 		return;
 
 	if (m_fInZoom)
 	{
-		m_pPlayer->pev->fov = m_pPlayer->m_iFOV = 0;
 		m_fInZoom = 0;
+		m_IdealZoom = 90;
+		m_ZoomSpeed = 2.5;
 	}
 	else
 	{
-		m_pPlayer->pev->fov = m_pPlayer->m_iFOV = 20;
 		m_fInZoom = 1;
+		m_IdealZoom = 20;
+		m_ZoomSpeed = 2.5;
 	}
 
-	m_flNextSecondaryAttack = UTIL_WeaponTimeBase() + 1.0;
 }
 
 void CCamera::Reload()

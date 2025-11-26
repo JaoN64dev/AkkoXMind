@@ -606,10 +606,15 @@ public:
 	BOOL Deploy(void);
 	void Holster(int skiplocal);
 	void Reload(void);
+	void ItemPostFrame(void);
 	void WeaponIdle(void);
 	float m_flNextAnimTime;
 	bool FlashOn = false;
 	float m_flNextReload;
+	float m_IdealZoom;
+	float m_StartZoom;
+	float m_ZoomSpeed;
+	float m_fInZoom;
 
 	virtual BOOL UseDecrement(void)
 	{

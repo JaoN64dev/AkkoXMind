@@ -24,7 +24,6 @@
 #include "r_efx.h"
 #include <string.h>
 #include <stdio.h>
-#include "dlight.h"
 DECLARE_MESSAGE(m_Flash, FlashBat)
 DECLARE_MESSAGE(m_Flash, Flashlight)
 DECLARE_MESSAGE(m_Flash, Flashy);
@@ -98,7 +97,7 @@ int CHudFlashlight:: MsgFunc_Flashlight(const char *pszName,  int iSize, void *p
 int CHudFlashlight::MsgFunc_Flashy(const char *pszName, int iSize, void *pbuf)
 {
 	dlight_t *pLight = gEngfuncs.pEfxAPI->CL_AllocDlight(0); // Create the light with the key #0 (let the engine pick up the first free slot)
-	pLight->die = 0.2f; // 0.1s is more than enough, the engine will destroy the light for us when it's done
+	pLight->die = 0.1f; // 0.1s is more than enough, the engine will destroy the light for us when it's done
 	pLight->origin = gEngfuncs.GetLocalPlayer()->origin; // Place the light at the origin of the local player
 	pLight->radius = 180.0f; // The radius in Hammer units of the light, 180 is almost the double or maybe x2.5 of Half-Life flashlight's size as an indicator
 	pLight->color.r = 255.0f; // Let's make a red light
