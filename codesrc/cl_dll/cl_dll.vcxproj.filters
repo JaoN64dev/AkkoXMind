@@ -94,7 +94,6 @@
     <ClCompile Include="StudioModelRenderer.cpp" />
     <ClCompile Include="textureloader.cpp" />
     <ClCompile Include="watershader.cpp" />
-    <ClCompile Include="complex_surfs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="environment.h" />
