@@ -152,23 +152,25 @@ int gmsgShake = 0;
 int gmsgFade = 0;
 int gmsgSelAmmo = 0;
 int gmsgFlashlight = 0;
-int gmsgFlashy = 0;
 int gmsgFlashBattery = 0;
 int gmsgResetHUD = 0;
 int gmsgInitHUD = 0;
 int gmsgShowGameTitle = 0;
 int gmsgCurWeapon = 0;
+int gmsgFlash = 0;
 int gmsgHealth = 0;
 int gmsgDamage = 0;
 int gmsgBattery = 0;
 int gmsgTrain = 0;
 int gmsgLogo = 0;
+int gmsgTeleport = 0;
 int gmsgWeaponList = 0;
 int gmsgAmmoX = 0;
 int gmsgHudText = 0;
 int gmsgDeathMsg = 0;
 int gmsgScoreInfo = 0;
 int gmsgTeamInfo = 0;
+int gmsgTeleport = 0;
 int gmsgTeamScore = 0;
 int gmsgGameMode = 0;
 int gmsgMOTD = 0;
@@ -212,13 +214,13 @@ void LinkUserMessages( void )
 	gmsgCurWeapon = REG_USER_MSG("CurWeapon", 3);
 	gmsgGeigerRange = REG_USER_MSG("Geiger", 1);
 	gmsgFlashlight = REG_USER_MSG("Flashlight", 2);
-	gmsgFlashy = REG_USER_MSG("Flashy", 2);
 	gmsgFlashBattery = REG_USER_MSG("FlashBat", 1);
 	gmsgHealth = REG_USER_MSG( "Health", 1 );
 	gmsgDamage = REG_USER_MSG( "Damage", 12 );
 	gmsgBattery = REG_USER_MSG( "Battery", 2);
 	gmsgTrain = REG_USER_MSG( "Train", 1);
 	gmsgHudText = REG_USER_MSG( "HudText", -1 );
+	gmsgFlash = REG_USER_MSG("Flash", -1);
 	gmsgSayText = REG_USER_MSG( "SayText", -1 );
 	gmsgTextMsg = REG_USER_MSG( "TextMsg", -1 );
 	gmsgWeaponList = REG_USER_MSG("WeaponList", -1);
@@ -228,6 +230,7 @@ void LinkUserMessages( void )
 	gmsgDeathMsg = REG_USER_MSG( "DeathMsg", -1 );
 	gmsgScoreInfo = REG_USER_MSG( "ScoreInfo", 9 );
 	gmsgTeamInfo = REG_USER_MSG( "TeamInfo", -1 );  // sets the name of a player's team
+	gmsgTeleport = REG_USER_MSG("Teleport", -1);
 	gmsgTeamScore = REG_USER_MSG( "TeamScore", -1 );  // sets the score of a team on the scoreboard
 	gmsgGameMode = REG_USER_MSG( "GameMode", 1 );
 	gmsgMOTD = REG_USER_MSG( "MOTD", -1 );
@@ -3318,19 +3321,6 @@ void CBasePlayer :: FlashlightTurnOn( void )
 	}
 }
 
-void CBasePlayer::FlashlightTurnFlash(void){
-	if ((pev->weapons & (1 << WEAPON_SUIT)))
-	{
-		EMIT_SOUND_DYN(ENT(pev), CHAN_WEAPON, SOUND_FLASHLIGHT_ON, 1.0, ATTN_NORM, 0, PITCH_NORM);
-		MESSAGE_BEGIN(MSG_ONE, gmsgFlashy, NULL, pev);
-		WRITE_BYTE(2);
-		ALERT(at_console, "yo");
-		WRITE_BYTE(m_iFlashBattery);
-		MESSAGE_END();
-		m_flFlashLightTime = FLASH_DRAIN_TIME + gpGlobals->time;
-
-	}
-}
 
 void CBasePlayer :: FlashlightTurnOff( void )
 {
@@ -3344,6 +3334,22 @@ void CBasePlayer :: FlashlightTurnOff( void )
 	m_flFlashLightTime = FLASH_CHARGE_TIME + gpGlobals->time;
 
 }
+
+
+int CBasePlayer::MsgFunc_Teleport(const char pszName, int iSize, voidpbuf)
+{
+	BEGIN_READ(pbuf, iSize);
+
+	vec3_t org;
+	org.x = READ_COORD();
+	org.y = READ_COORD();
+	org.z = READ_COORD();
+
+	gEngfuncs.pEfxAPI->R_TeleportSplash(org);
+
+	return 1;
+}
+
 
 /*
 ===============
