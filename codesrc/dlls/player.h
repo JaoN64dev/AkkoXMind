@@ -324,7 +324,7 @@ public:
 #define AUTOAIM_8DEGREES  0.1391731009601
 #define AUTOAIM_10DEGREES 0.1736481776669
 
-
+extern int gmsgTeleport;
 extern int	gmsgHudText;
 extern BOOL gInitHUD;
 

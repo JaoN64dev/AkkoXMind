@@ -25,6 +25,8 @@
 #include "r_efx.h"
 
 
+extern int gmsgTeleport;
+
 enum mp5_e
 {
 	MP5_LONGIDLE = 0,
@@ -172,7 +174,11 @@ void CCamera::PrimaryAttack()
 	}
 	
 	if (FlashOn == true){
-		m_pPlayer->FlashlightTurnFlash();
+		MESSAGE_BEGIN(MSG_ONE, gmsgHudText , NULL, pev);
+		
+		
+		
+		MESSAGE_END();
 	}
 
 

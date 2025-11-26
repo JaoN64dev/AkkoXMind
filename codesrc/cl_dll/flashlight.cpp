@@ -26,7 +26,6 @@
 #include <stdio.h>
 DECLARE_MESSAGE(m_Flash, FlashBat)
 DECLARE_MESSAGE(m_Flash, Flashlight)
-DECLARE_MESSAGE(m_Flash, Flashy);
 
 #define BAT_NAME "sprites/%d_Flashlight.spr"
 
@@ -36,7 +35,6 @@ int CHudFlashlight::Init(void)
 	m_fOn = 0;
 
 	HOOK_MESSAGE(Flashlight);
-	HOOK_MESSAGE(Flashy);
 	HOOK_MESSAGE(FlashBat);
 
 	m_iFlags |= HUD_ACTIVE;
@@ -94,6 +92,7 @@ int CHudFlashlight:: MsgFunc_Flashlight(const char *pszName,  int iSize, void *p
 	return 1;
 }
 
+<<<<<<< HEAD
 int CHudFlashlight::MsgFunc_Flashy(const char *pszName, int iSize, void *pbuf)
 {
 	dlight_t *pLight = gEngfuncs.pEfxAPI->CL_AllocDlight(0); // Create the light with the key #0 (let the engine pick up the first free slot)
@@ -108,6 +107,8 @@ int CHudFlashlight::MsgFunc_Flashy(const char *pszName, int iSize, void *pbuf)
 	return 1;
 }
 
+=======
+>>>>>>> cb02691b1d8789749f2da2b9e11f48799e8c758d
 
 int CHudFlashlight::Draw(float flTime)
 {

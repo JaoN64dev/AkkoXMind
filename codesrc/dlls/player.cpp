@@ -277,6 +277,7 @@ void CBasePlayer :: Pain( void )
 		EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/pl_pain7.wav", 1, ATTN_NORM);
 }
 
+
 /* 
  *
  */

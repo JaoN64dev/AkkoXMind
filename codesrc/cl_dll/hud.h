@@ -203,6 +203,18 @@ private:
 //
 //-----------------------------------------------------
 //
+
+class CHudFlash : public CHudBase
+{
+public:
+	int Init(void);
+	void MsgFunc_Flash(const char *pszName, int iSize, void *pbuf);
+};
+
+
+//
+//-----------------------------------------------------
+//
 class CHudTrain: public CHudBase
 {
 public:
@@ -430,7 +442,6 @@ public:
 	void Reset( void );
 	int MsgFunc_Flashlight(const char *pszName,  int iSize, void *pbuf );
 	int MsgFunc_FlashBat(const char *pszName,  int iSize, void *pbuf );
-	int MsgFunc_Flashy(const char *pszName, int iSize, void *pbuf);
 	
 private:
 	SpriteHandle_t m_SpriteHandle_t1;
@@ -629,6 +640,7 @@ public:
 	CHudBattery		m_Battery;
 	CHudTrain		m_Train;
 	CHudFlashlight	m_Flash;
+	CHudFlash		m_Flashy;
 	CHudMessage		m_Message;
 	CHudStatusBar   m_StatusBar;
 	CHudDeathNotice m_DeathNotice;
@@ -651,11 +663,13 @@ public:
 	int _cdecl MsgFunc_Damage(const char *pszName, int iSize, void *pbuf );
 	int _cdecl MsgFunc_GameMode(const char *pszName, int iSize, void *pbuf );
 	int _cdecl MsgFunc_Logo(const char *pszName,  int iSize, void *pbuf);
+	int MsgFunc_Teleport(const char *pszName, int iSize, void *pbuf);
 	int _cdecl MsgFunc_ResetHUD(const char *pszName,  int iSize, void *pbuf);
 	void _cdecl MsgFunc_InitHUD( const char *pszName, int iSize, void *pbuf );
 	void _cdecl MsgFunc_ViewMode( const char *pszName, int iSize, void *pbuf );
 	int _cdecl MsgFunc_SetFOV(const char *pszName,  int iSize, void *pbuf);
 	int  _cdecl MsgFunc_Concuss( const char *pszName, int iSize, void *pbuf );
+	
 
 	// Screen information
 	SCREENINFO	m_scrinfo;
@@ -687,6 +701,7 @@ public:
 	int  _cdecl MsgFunc_SkyMark_W( const char *pszName, int iSize, void *pbuf );
 	int  _cdecl MsgFunc_DynLight( const char *pszName, int iSize, void *pbuf );
 	int  _cdecl MsgFunc_CreateSystem( const char *pszName, int iSize, void *pbuf );
+	int __MsgFunc_Teleport(const char* pszName, int iSize, void* pbuf);
 //RENDERERS END
 };
 

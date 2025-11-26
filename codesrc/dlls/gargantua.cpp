@@ -585,7 +585,7 @@ void CGargantua :: FlameUpdate( void )
 			FlameDamage( vecStart, trace.vecEndPos, pev, pev, gSkillData.gargantuaDmgFire, CLASS_ALIEN_MONSTER, DMG_BURN );
 
 			MESSAGE_BEGIN( MSG_BROADCAST, SVC_TEMPENTITY );
-				WRITE_BYTE( TE_ELIGHT );
+				WRITE_BYTE(TE_ELIGHT);
 				WRITE_SHORT( entindex( ) + 0x1000 * (i + 2) );		// entity, attachment
 				WRITE_COORD( vecStart.x );		// origin
 				WRITE_COORD( vecStart.y );

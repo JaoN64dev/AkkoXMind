@@ -105,7 +105,10 @@ int __MsgFunc_Logo(const char *pszName, int iSize, void *pbuf)
 {
 	return gHUD.MsgFunc_Logo(pszName, iSize, pbuf );
 }
-
+int __MsgFunc_Teleport(const char *pszName, int iSize, void *pbuf)
+{
+	return gHUD.MsgFunc_Teleport(pszName, iSize, pbuf);
+}
 //DECLARE_MESSAGE(m_Logo, Logo)
 int __MsgFunc_ResetHUD(const char *pszName, int iSize, void *pbuf)
 {
@@ -323,6 +326,7 @@ int __MsgFunc_Particle(const char *pszName, int iSize, void *pbuf )
 void CHud :: Init( void )
 {
 	HOOK_MESSAGE( Logo );
+	HOOK_MESSAGE( Teleport );
 	HOOK_MESSAGE( ResetHUD );
 	HOOK_MESSAGE( GameMode );
 	HOOK_MESSAGE( InitHUD );
@@ -349,7 +353,6 @@ void CHud :: Init( void )
 	HOOK_MESSAGE( ScoreInfo );
 	HOOK_MESSAGE( TeamScore );
 	HOOK_MESSAGE( TeamInfo );
-
 	HOOK_MESSAGE( Spectator );
 	HOOK_MESSAGE( AllowSpec );
 
@@ -586,6 +589,20 @@ int CHud::MsgFunc_Logo(const char *pszName,  int iSize, void *pbuf)
 
 float g_lastFOV = 0.0;
 
+
+int CHud::MsgFunc_Teleport(const char *pszName, int iSize, void *pbuf)
+{
+	BEGIN_READ(pbuf, iSize);
+
+	vec3_t org;
+	org.x = READ_COORD();
+	org.y = READ_COORD();
+	org.z = READ_COORD();
+
+	gEngfuncs.pEfxAPI->R_TeleportSplash(org);
+
+	return 1;
+}
 /*
 ============
 COM_FileBase
