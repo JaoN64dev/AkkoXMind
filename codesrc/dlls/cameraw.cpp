@@ -37,7 +37,10 @@ enum mp5_e
 	MP5_FIRE3,
 };
 
-
+const char* cameraTargets[] = {
+	"monster_islave",
+	"monster_human_grunt",
+};
 
 LINK_ENTITY_TO_CLASS(weapon_camera, CCamera);
 //=========================================================
@@ -170,17 +173,20 @@ void CCamera::PrimaryAttack()
 		m_flNextPrimaryAttack = 0.15;
 		return;
 	}
-	
-	if (FlashOn == true){
-		MESSAGE_BEGIN(MSG_ONE, gmsgHudText , NULL, pev);
-		
-		
-		
-		MESSAGE_END();
+	CBaseEntity *pCameratarget= NULL;
+	while ((pCameratarget = UTIL_FindEntityInSphere(pCameratarget, pev->origin, 256)) != NULL) {
+		const char* entName = STRING(pCameratarget->pev->targetname);
+		if (!entName) continue;
+
+		for (const char* target : cameraTargets) {
+			if (strcmp(entName, target) == 0) {
+			
+			}
+		}
 	}
 
 
-
+	
 
 
 

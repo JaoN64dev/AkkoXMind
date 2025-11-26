@@ -50,7 +50,7 @@ class DragNDropPanel;
 class CTransparentPanel;
 class CClassMenuPanel;
 class CTeamMenuPanel;
-
+class CHintText; // VGUI Tutorial
 char* GetVGUITGAName(const char *pszName);
 BitmapTGA *LoadTGAForRes(const char* pImageName);
 void ScaleColors( int &r, int &g, int &b, int a );
@@ -434,6 +434,10 @@ private:
 	CMenuPanel*	 ShowTeamMenu( void );
 	void		 CreateClassMenu( void );
 	CMenuPanel*	 ShowClassMenu( void );
+	    // Start - VGUI Tutorial
+    void         CreateHintTextMenu( void );
+    CMenuPanel*  ShowHintMenu ( void );
+    // End - VGUI Tutorial
 	void		 CreateSpectatorMenu( void );
 	
 	// Scheme handler
@@ -554,6 +558,7 @@ public:
 	int						m_SpectatorOptionsMenu;
 	int						m_SpectatorCameraMenu;
 	CClassMenuPanel	*m_pClassMenu;
+	CHintText      *m_pHintText; // VGUI Tutorial
 	ScorePanel		*m_pScoreBoard;
 	SpectatorPanel *		m_pSpectatorPanel;
 	char			m_szServerName[ MAX_SERVERNAME_LENGTH ];
@@ -1574,6 +1579,21 @@ public:
 //================================================================
 // Menu Panels that take key input
 //============================================================
+// Start - VGUI Tutorial
+//================================================================
+// First VGUI menu!
+//============================================================
+class CHintText : public CMenuPanel
+{
+private:
+	Label				*m_pHintText;
+    CommandButton       *m_pCancelButton;
+
+public:
+    CHintText(int iTrans, int iRemoveMe, int x, int y, int wide, int tall);
+};
+// End - VGUI Tutorial
+
 class CClassMenuPanel : public CMenuPanel
 {
 private:

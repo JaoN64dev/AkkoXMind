@@ -564,6 +564,13 @@ void ClientCommand( edict_t *pEntity )
 	{
 		GetClassPtr((CBasePlayer *)pev)->SelectLastItem();
 	}
+	   // Start - VGUI Tutorial
+    else if ( FStrEq(pcmd, "vguimenu" ) )
+    {
+        if (CMD_ARGC() >= 1)
+            GetClassPtr((CBasePlayer *)pev)->ShowVGUIMenu(atoi(CMD_ARGV(1)));
+    }
+    // End - VGUI Tutorial
 	else if ( FStrEq( pcmd, "spectate" ) && (pev->flags & FL_PROXY) )	// added for proxy support
 	{
 		CBasePlayer * pPlayer = GetClassPtr((CBasePlayer *)pev);

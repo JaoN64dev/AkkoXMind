@@ -51,7 +51,6 @@ extern engine_studio_api_t IEngineStudio;
 //RENDERERS END
 
 DECLARE_MESSAGE(m_CameraFlash, CameraFlash);
-
 class CHLVoiceStatusHelper : public IVoiceStatusHelper
 {
 public:
@@ -602,6 +601,9 @@ int CHudCameraFlash::MsgFunc_CameraFlash(const char *pszName, int iSize, void *p
 
 	return 1;
 }
+
+
+
 /*
 ============
 COM_FileBase

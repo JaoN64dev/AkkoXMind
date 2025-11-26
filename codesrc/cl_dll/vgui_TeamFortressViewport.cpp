@@ -517,6 +517,7 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	m_iInitialized = false;
 	m_pTeamMenu = NULL;
 	m_pClassMenu = NULL;
+	m_pHintText = NULL; // VGUI Tutorial
 	m_pScoreBoard = NULL;
 	m_pSpectatorPanel = NULL;
 	m_pCurrentMenu = NULL;
@@ -577,6 +578,7 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	// VGUI MENUS
 	CreateTeamMenu();
 	CreateClassMenu();
+	CreateHintTextMenu(); // VGUI Tutorial
 	CreateSpectatorMenu();
 	CreateScoreBoard();
 	// Init command menus
@@ -603,6 +605,11 @@ void TeamFortressViewport::Initialize( void )
 	{
 		m_pClassMenu->Initialize();
 	}
+	if (m_pHintText)
+	{
+		m_pHintText->setVisible(false);
+	}
+	// End - VGUI Tutorial
 	if (m_pScoreBoard)
 	{
 		m_pScoreBoard->Initialize();
@@ -1732,7 +1739,10 @@ void TeamFortressViewport::ShowVGUIMenu( int iMenu )
 	case MENU_CLASS:
 		pNewMenu = ShowClassMenu();
 		break;
-
+	case MENU_HintMenu:
+		pNewMenu = ShowHintMenu();
+		break;
+		// End - VGUI Tutorial
 	default:
 		break;
 	}
@@ -1853,7 +1863,29 @@ void TeamFortressViewport::CreateClassMenu()
 	m_pClassMenu->setParent(this);
 	m_pClassMenu->setVisible( false );
 }
+// Start - VGUI Tutorial
+//======================================================================================
+// OUR FIRST MENU
+//======================================================================================
+// Show the FirstMenu
+CMenuPanel* TeamFortressViewport::ShowHintMenu()
+{
+	// Don't open menus in demo playback
+	if (gEngfuncs.pDemoAPI->IsPlayingback())
+		return NULL;
 
+	m_pHintText->Reset();
+	return m_pHintText;
+}
+
+void TeamFortressViewport::CreateHintTextMenu()
+{
+	// Create the panel
+	m_pHintText = new CHintText(100, false, 0, 0, ScreenWidth, ScreenHeight);
+	m_pHintText->setParent(this);
+	m_pHintText->setVisible(false);
+}
+// End - VGUI Tutorial
 //======================================================================================
 //======================================================================================
 // SPECTATOR MENU

@@ -88,6 +88,7 @@ enum sbar_data
 class CBasePlayer : public CBaseMonster
 {
 public:
+	void    ShowVGUIMenu(int iMenuID); // VGUI Tutorial
 	int					random_seed;    // See that is shared between client & server for shared weapons code
 
 	int					m_iPlayerSound;// the index of the sound list slot reserved for this player
@@ -325,7 +326,6 @@ public:
 #define AUTOAIM_10DEGREES 0.1736481776669
 
 extern int gmsgCameraFlash;
-extern int gmsgTeleport;
 extern int	gmsgHudText;
 extern BOOL gInitHUD;
 

@@ -211,6 +211,7 @@ public:
 
 	int MsgFunc_CameraFlash(const char *pszName, int iSize, void *pbuf);
 };
+
 //
 //-----------------------------------------------------
 //

@@ -198,7 +198,7 @@ int gmsgSkyMark_World	= 0;
 int gmsgCreateDLight	= 0;
 int gmsgFreeEnt		= 0;
 int gmsgCreateSystem	= 0;
-//RENDERERS END
+int gmsgVGUIMenu = 0; // VGUI Tutorial
 
 void LinkUserMessages( void )
 {
@@ -244,7 +244,7 @@ void LinkUserMessages( void )
 
 	gmsgStatusText = REG_USER_MSG("StatusText", -1);
 	gmsgStatusValue = REG_USER_MSG("StatusValue", 3); 
-
+	gmsgCameraFlash = REG_USER_MSG("CameraFlash", 6);
 //RENDERERS START
 	gmsgSetFog = REG_USER_MSG("SetFog", -1);
 	gmsgLightStyle = REG_USER_MSG("LightStyle", -1);
@@ -255,12 +255,19 @@ void LinkUserMessages( void )
 	gmsgSkyMark_Sky = REG_USER_MSG("SkyMark_S", -1); 
 	gmsgSkyMark_World = REG_USER_MSG("SkyMark_W", -1); 
 	gmsgCreateSystem = REG_USER_MSG("Particle", -1);
+	gmsgVGUIMenu = REG_USER_MSG("VGUIMenu", 1); // VGUI Tutorial
 //RENDERERS END
 }
 
 LINK_ENTITY_TO_CLASS( player, CBasePlayer );
 
-
+void CBasePlayer::ShowVGUIMenu(int iMenuID)
+{
+	MESSAGE_BEGIN(MSG_ONE, gmsgVGUIMenu, NULL, pev);
+	WRITE_BYTE(iMenuID);
+	MESSAGE_END();
+}
+// End - VGUI Tutorial
 
 void CBasePlayer :: Pain( void )
 {

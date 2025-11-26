@@ -1124,6 +1124,8 @@ float already_chosen_map;
 #define MENU_TEAM_CHANGE			21
 
 #define MENU_REFRESH_RATE 			25
+// VGUI Tutorial
+#define MENU_HintMenu           30
 
 #define MENU_VOICETWEAK				50
 
