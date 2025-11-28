@@ -95,6 +95,10 @@
     <ClCompile Include="textureloader.cpp" />
     <ClCompile Include="watershader.cpp" />
     <ClCompile Include="vguiHintText.cpp" />
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="hud_captions.cpp" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="environment.h" />
