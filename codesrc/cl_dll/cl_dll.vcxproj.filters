@@ -94,11 +94,7 @@
     <ClCompile Include="StudioModelRenderer.cpp" />
     <ClCompile Include="textureloader.cpp" />
     <ClCompile Include="watershader.cpp" />
-    <ClCompile Include="vguiHintText.cpp" />
-<<<<<<< Updated upstream
-=======
-    <ClCompile Include="hud_captions.cpp" />
->>>>>>> Stashed changes
+    <ClCompile Include="vgui_FirstMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="environment.h" />

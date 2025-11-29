@@ -517,7 +517,7 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	m_iInitialized = false;
 	m_pTeamMenu = NULL;
 	m_pClassMenu = NULL;
-	m_pHintText = NULL; // VGUI Tutorial
+	m_pFirstMenu = NULL; // VGUI Tutorial
 	m_pScoreBoard = NULL;
 	m_pSpectatorPanel = NULL;
 	m_pCurrentMenu = NULL;
@@ -578,7 +578,7 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	// VGUI MENUS
 	CreateTeamMenu();
 	CreateClassMenu();
-	CreateHintTextMenu(); // VGUI Tutorial
+	CreateFirstMenu(); // VGUI Tutorial
 	CreateSpectatorMenu();
 	CreateScoreBoard();
 	// Init command menus
@@ -605,10 +605,13 @@ void TeamFortressViewport::Initialize( void )
 	{
 		m_pClassMenu->Initialize();
 	}
-	if (m_pHintText)
+	
+	// Start - VGUI Tutorial
+	if (m_pFirstMenu)
 	{
-		m_pHintText->setVisible(false);
+		m_pFirstMenu->setVisible(false);
 	}
+	// End - VGUI Tutorial
 	// End - VGUI Tutorial
 	if (m_pScoreBoard)
 	{
@@ -1566,8 +1569,7 @@ CMenuPanel* TeamFortressViewport::CreateTextWindow( int iTextToShow )
 	char *pfile = NULL;
 	static const int MAX_TITLE_LENGTH = 32;
 	char cTitle[MAX_TITLE_LENGTH];
-
-	if ( iTextToShow == SHOW_MOTD )
+	if ( iTextToShow == 30 )
 	{
 		if (!m_szServerName || !m_szServerName[0])
 			strcpy( cTitle, "Half-Life" );
@@ -1675,6 +1677,15 @@ CMenuPanel* TeamFortressViewport::CreateTextWindow( int iTextToShow )
 			cText = pfile;
 		}
 	}
+	else if (iTextToShow == MENU_HINTTEXT)
+	{
+		if (!m_szServerName || !m_szServerName[0])
+			strcpy(cTitle, "Half-Life");
+		else
+			strncpy(cTitle, m_szServerName, MAX_TITLE_LENGTH);
+		cTitle[MAX_TITLE_LENGTH - 1] = 0;
+		cText = m_szMOTD;
+	}
 
 	// if we're in the game (ie. have selected a class), flag the menu to be only grayed in the dialog box, instead of full screen
 	CMenuPanel *pMOTDPanel = CMessageWindowPanel_Create( cText, cTitle, g_iPlayerClass == PC_UNDEFINED, false, 0, 0, ScreenWidth, ScreenHeight );
@@ -1739,9 +1750,7 @@ void TeamFortressViewport::ShowVGUIMenu( int iMenu )
 	case MENU_CLASS:
 		pNewMenu = ShowClassMenu();
 		break;
-	case MENU_HintMenu:
-		pNewMenu = ShowHintMenu();
-		break;
+		// Start - VGUI Tutorial
 		// End - VGUI Tutorial
 	default:
 		break;
@@ -1851,7 +1860,7 @@ CMenuPanel* TeamFortressViewport::ShowClassMenu()
 	// Don't open menus in demo playback
 	if ( gEngfuncs.pDemoAPI->IsPlayingback() )
 		return NULL;
-
+	
 	m_pClassMenu->Reset();
 	return m_pClassMenu;
 }
@@ -1863,31 +1872,29 @@ void TeamFortressViewport::CreateClassMenu()
 	m_pClassMenu->setParent(this);
 	m_pClassMenu->setVisible( false );
 }
-// Start - VGUI Tutorial
+
+/// Start - VGUI Tutorial
 //======================================================================================
 // OUR FIRST MENU
 //======================================================================================
 // Show the FirstMenu
-CMenuPanel* TeamFortressViewport::ShowHintMenu()
+CMenuPanel* TeamFortressViewport::ShowFirstMenu()
 {
-	// Don't open menus in demo playback
-	if (gEngfuncs.pDemoAPI->IsPlayingback())
-		return NULL;
-
-	m_pHintText->Reset();
-	return m_pHintText;
+    // Don't open menus in demo playback
+    if ( gEngfuncs.pDemoAPI->IsPlayingback() )
+        return NULL;
+    m_pFirstMenu->Reset();
+    return m_pFirstMenu;
 }
 
-void TeamFortressViewport::CreateHintTextMenu()
+void TeamFortressViewport::CreateFirstMenu()
 {
-	// Create the panel
-	m_pHintText = new CHintText(100, false, 0, 0, ScreenWidth, ScreenHeight);
-	m_pHintText->setParent(this);
-	m_pHintText->setVisible(false);
+    // Create the panel
+    m_pFirstMenu = new CFirstMenu(100, false, 0, 0, ScreenWidth, ScreenHeight);
+    m_pFirstMenu->setParent(this);
+    m_pFirstMenu->setVisible( false );
 }
 // End - VGUI Tutorial
-//======================================================================================
-//======================================================================================
 // SPECTATOR MENU
 //======================================================================================
 // Spectator "Menu" explaining the Spectator buttons

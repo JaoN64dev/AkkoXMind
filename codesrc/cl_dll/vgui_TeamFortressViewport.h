@@ -50,7 +50,7 @@ class DragNDropPanel;
 class CTransparentPanel;
 class CClassMenuPanel;
 class CTeamMenuPanel;
-class CHintText; // VGUI Tutorial
+class CFirstMenu; // VGUI Tutorial
 char* GetVGUITGAName(const char *pszName);
 BitmapTGA *LoadTGAForRes(const char* pImageName);
 void ScaleColors( int &r, int &g, int &b, int a );
@@ -434,10 +434,10 @@ private:
 	CMenuPanel*	 ShowTeamMenu( void );
 	void		 CreateClassMenu( void );
 	CMenuPanel*	 ShowClassMenu( void );
-	    // Start - VGUI Tutorial
-    void         CreateHintTextMenu( void );
-    CMenuPanel*  ShowHintMenu ( void );
-    // End - VGUI Tutorial
+	// Start - VGUI Tutorial
+	void         CreateFirstMenu(void);
+	CMenuPanel*  ShowFirstMenu(void);
+	// End - VGUI Tutorial
 	void		 CreateSpectatorMenu( void );
 	
 	// Scheme handler
@@ -558,7 +558,7 @@ public:
 	int						m_SpectatorOptionsMenu;
 	int						m_SpectatorCameraMenu;
 	CClassMenuPanel	*m_pClassMenu;
-	CHintText      *m_pHintText; // VGUI Tutorial
+	CFirstMenu      *m_pFirstMenu; // VGUI Tutorial
 	ScorePanel		*m_pScoreBoard;
 	SpectatorPanel *		m_pSpectatorPanel;
 	char			m_szServerName[ MAX_SERVERNAME_LENGTH ];
@@ -1576,23 +1576,22 @@ public:
 	CTFScrollPanel(int x,int y,int wide,int tall);
 };
 
-//================================================================
-// Menu Panels that take key input
-//============================================================
 // Start - VGUI Tutorial
 //================================================================
 // First VGUI menu!
 //============================================================
-class CHintText : public CMenuPanel
+class CFirstMenu : public CMenuPanel
 {
 private:
-	Label				*m_pHintText;
-    CommandButton       *m_pCancelButton;
+	CommandButton       *m_pCancelButton;
 
 public:
-    CHintText(int iTrans, int iRemoveMe, int x, int y, int wide, int tall);
+	CFirstMenu(int iTrans, int iRemoveMe, int x, int y, int wide, int tall);
 };
 // End - VGUI Tutorial
+
+//================================================================
+// Menu Panels that take key input
 
 class CClassMenuPanel : public CMenuPanel
 {
@@ -1647,7 +1646,6 @@ public:
 	virtual bool SlotInput( int iSlot );
 	virtual void Open( void );
 	virtual void Update( void );
-	virtual void SetActiveInfo( int iInput );
 	virtual void paintBackground( void );
 
 	virtual void Initialize( void );

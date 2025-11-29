@@ -270,7 +270,6 @@ void CClassMenuPanel::Update()
 			if (i == 0)
 			{
 				m_pButtons[0]->setVisible( true );
-				SetActiveInfo( 0 );
 				iYPos += CLASSMENU_BUTTON_SIZE_Y + CLASSMENU_BUTTON_SPACER_Y;
 			}
 			else
@@ -291,8 +290,7 @@ void CClassMenuPanel::Update()
 				iYPos += CLASSMENU_BUTTON_SIZE_Y + CLASSMENU_BUTTON_SPACER_Y;
 
 				// Start with the first option up
-				if (!m_iCurrentInfo)
-					SetActiveInfo( i );
+			
 			}
 		}
 

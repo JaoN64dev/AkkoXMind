@@ -189,10 +189,6 @@ void CTeamMenuPanel::Update( void )
 				m_pButtons[i]->setPos( TEAMMENU_TOPLEFT_BUTTON_X, iYPos );
 				iYPos += TEAMMENU_BUTTON_SIZE_Y + TEAMMENU_BUTTON_SPACER_Y;
 
-				// Start with the first option up
-				if (!m_iCurrentInfo)
-					SetActiveInfo( i );
-
 				char szPlayerList[ (MAX_PLAYER_NAME_LENGTH + 3) * 31 ];  // name + ", "
 				strcpy(szPlayerList, "\n");
 				// Update the Team Info
@@ -365,29 +361,3 @@ void CTeamMenuPanel::paintBackground()
 }
 
 //======================================
-// Mouse is over a team button, bring up the class info
-void CTeamMenuPanel::SetActiveInfo( int iInput )
-{
-	// Remove all the Info panels and bring up the specified one
-	m_pSpectateButton->setArmed( false );
-	for (int i = 1; i <= 5; i++)
-	{
-		m_pButtons[i]->setArmed( false );
-		m_pTeamInfoPanel[i]->setVisible( false );
-	}
-
-	// 6 is Spectate
-	if (iInput == 6)
-	{
-		m_pSpectateButton->setArmed( true );
-	}
-	else
-	{
-		m_pButtons[iInput]->setArmed( true );
-		m_pTeamInfoPanel[iInput]->setVisible( true );
-	}
-
-	m_iCurrentInfo = iInput;
-
-	m_pScrollPanel->validate();
-}
